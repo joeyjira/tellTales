@@ -2,15 +2,12 @@
 
 #### HomePage
   - HomePageHeader
-  - HomePageFeatures
 
 #### SignInContainer
-  - UserFormModal
-    - UserForm
+  - UserForm
 
 #### SignUpContainer
-  - UserFormModal
-    - UserForm
+  - UserForm
 
 #### MainPage
   - SideNav
@@ -18,18 +15,17 @@
   - AllFeedsContainer  
 
 #### SideNav
-  - MiscNavLinks
+  - NavLinks
   - CollectionListContainer
-  - BoardListContainer
 
 #### CollectionListContainer
   - CollectionList
     - Collection
       - CollectionItem
 
-#### BoardListContainer
-  - BoardList
-    - BoardItem
+#### DiscoverContainer
+  - DiscoverHeader
+  - DiscoverCategory
 
 #### AllFeedsContainer
   - FeedListContainer
@@ -43,8 +39,8 @@
   - ButtonList
     - Button
 
-#### ArticleModalContainer
-  - ArticleModal
+#### ArticleReaderContainer
+  - ArticleReader
     - ArticleNav
     - ButtonListContainer
     - ArticleContent
@@ -55,12 +51,6 @@
     - SearchResultList
     - SearchResultItem
 
-#### ReadLaterContainer
-  - FeedListContainer
-
-#### ExploreContainer
-  - ExploreHeader
-  - ExploreCategory
 
 ## Routes
 
@@ -71,5 +61,4 @@
 | /signin | SignUpContainer |
 | /feeds | MainPage (logged in) |
 | /feeds/:feedId | FeedListContainer |
-| /saved | ReadLaterContainer |
-| /explore | ExploreContainer |
+| /discover | DiscoverContainer |

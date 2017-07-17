@@ -1,10 +1,10 @@
-# tellTale
+# tellTales
 
-[Trello Link](https://trello.com/b/LeRXYEBj/telltale)
+[Trello Link](https://trello.com/b/LeRXYEBj/telltales)
 
 ## Minimum Viable Product
 
-tellTale is an app inspired by Feedly. It will be built using Ruby on Rails and React/Redux. At the end of Week 9, tellTale will, at minimum satisfy the MVP features with adequate styling, smooth bug-free navigation and appropriate seeds to demonstrate the capabilities of the site.
+tellTales is an app inspired by Feedly. It will be built using Ruby on Rails and React/Redux. At the end of Week 9, tellTale will, at minimum satisfy the MVP features with adequate styling, smooth bug-free navigation and appropriate seeds to demonstrate the capabilities of the site.
 
 
 

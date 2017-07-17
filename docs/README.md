@@ -1,6 +1,7 @@
 # tellTales
 
 [Trello Link](https://trello.com/b/LeRXYEBj/telltales)
+[Heroku Link]()
 
 ## Minimum Viable Product
 
@@ -39,10 +40,10 @@ MVP features include the following:
   - **Objective:** Able to create collections and have feeds added to them. Display the feeds in Collections.
 ### Phase 4: Articles (1 day)
   - **Objective:** Articles are displayed on the page and saved to users reading list.
-### Phase 5: Discover (1 day W2 THU 6PM)
+### Phase 5: Discover (1 day)
   - **Objective:** User can add more RSS Feed from existing ones.
-### Phase 6: Article View (1 day W2 FRI 6PM)
-  - **Objective:** Articles can be clicked and displays the content on the current view with a dedicated viewer.
+### Phase 6: Article View (1 day)
+  - **Objective:** Able to view an article in a dedicated viewer
 
 ### Bonus Features
 

@@ -56,9 +56,9 @@
 
 |Path   | Component   |
 |-------|-------------|
-| / | HomePage (logged out) |
+| /     | HomePage (logged out) |
 | /signup | SignInContainer |
 | /signin | SignUpContainer |
-| /feeds | MainPage (logged in) |
+| /feeds  | MainPage (logged in) |
 | /feeds/:feedId | FeedListContainer |
 | /discover | DiscoverContainer |

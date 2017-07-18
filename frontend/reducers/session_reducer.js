@@ -13,17 +13,16 @@ const nullUser = () => (
   }
 );
 
-const SessionReducer = (state = nullUser, action) => {
+const SessionReducer = (state = nullUser(), action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, state, currentUser);
-    case LOGOUT:
-      return state;
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, errors);
     default:
+      return state;
   }
 };
 

@@ -26,5 +26,6 @@ class Api::SessionsController < ApplicationController
       json: ["No User currently signed in!"],
       status: 404
       )
+    end
   end
 end

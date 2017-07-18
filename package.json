@@ -21,6 +21,10 @@
     "test": "test"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "webpack": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"

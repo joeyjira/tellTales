@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #background {
-  background-image: url("map_of_the_world.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -12,18 +11,19 @@
 .main-portal {
   margin: auto;
   width: 650px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #e2e2e3;
   top: 20%;
   position: absolute;
   left: 0;
   right: 0;
+  opacity: 0.92;
 }
 
 .title{
   font-weight: 600;
   vertical-align: center;
-  margin: 10px 213px 25px 213px;
-  color: rgb(38, 139, 210);
+  margin: 10px 220px 30px 220px;
+  color: rgba(38, 139, 210, 1);
   font-size: 75px;
 }
 

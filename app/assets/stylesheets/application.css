@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ #background {
+   background-image: url("map_of_the_world.jpg");
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+ }

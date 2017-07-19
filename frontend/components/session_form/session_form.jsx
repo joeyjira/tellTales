@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+
+import Signup from './signup';
+import Login from './login';
 
 class SessionForm extends React.Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -18,80 +14,20 @@ class SessionForm extends React.Component {
     }
   }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
-  }
-
-  handleDemo(e){
-    e.preventDefault();
-    const user = {user: {
-        username: "andrew",
-        password: "andrew"
-    }};
-    this.props.processForm(user);
-}
-
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
-    } else {
-      return <Link to="/login">Log In</Link>;
-    }
-  }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to tellTales!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
-            <input type="submit" value="Demo" onClick={this.handleDemo}/>
+      <div id="background">
+        <div className="main-portal">
+          <h1 className="title">tellTales</h1>
+          <h2 className="tagline"></h2>
+          <div className="session-form-container">
+            <Signup signupErrors={this.props.signupErrors} signup={this.props.signup} />
+            <Login loginErrors={this.props.loginErrors} login={this.props.login} />
           </div>
-        </form>
+        </div>
       </div>
     );
   }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;

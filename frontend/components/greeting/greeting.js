@@ -6,8 +6,6 @@ const sessionLinks = () => (
     <Link to="/login">Existing User</Link>
     &nbsp;
     <Link to="/signup">Getting Started</Link>
-    &nbsp;
-    <Link to="/demo">Demo</Link>
   </nav>
 );
 

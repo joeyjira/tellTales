@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
   Route,
   Redirect,
@@ -8,6 +9,8 @@ import {
 } from 'react-router-dom';
 
 import SessionFormContainer from './session_form/session_form_container';
+import GreetingContainer from './greeting/greeting_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -15,6 +18,7 @@ const App = () => (
       <Link to="/" className="header-link">
         <h1>tellTales</h1>
       </Link>
+      <GreetingContainer />
     </header>
     <Switch>
      <AuthRoute path="/login" component={SessionFormContainer} />

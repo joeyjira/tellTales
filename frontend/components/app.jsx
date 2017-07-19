@@ -13,16 +13,18 @@ import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className="main">
     <header>
       <Link to="/" className="header-link">
         <h1>tellTales</h1>
       </Link>
-      <GreetingContainer />
+      <input type="text" value="searchBar"/>
     </header>
+    <GreetingContainer />
     <Switch>
      <AuthRoute path="/login" component={SessionFormContainer} />
      <AuthRoute path="/signup" component={SessionFormContainer} />
+     <AuthRoute path="/demo" component={SessionFormContainer} />
    </Switch>
   </div>
 );

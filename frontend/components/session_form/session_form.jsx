@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,11 +30,20 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  handleDemo(e){
+    e.preventDefault();
+    const user = {user: {
+        username: "andrew",
+        password: "andrew"
+    }};
+    this.props.processForm(user);
+}
+
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link to="/signup">Existing User</Link>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <Link to="/login">Getting Started</Link>;
     }
   }
 
@@ -76,6 +86,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input type="submit" value="Submit" />
+            <input type="submit" value="Demo" onClick={this.handleDemo}/>
           </div>
         </form>
       </div>

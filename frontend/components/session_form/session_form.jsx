@@ -10,19 +10,20 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/feed');
     }
   }
 
   render() {
+    const { login, signup, signupErrors, loginErrors, history } = this.props;
     return (
       <div id="background">
         <div className="main-portal">
           <h1 className="title">tellTales</h1>
-          <h2 className="tagline"></h2>
+          <h2 className="tagline">Hello World!</h2>
           <div className="session-form-container">
-            <Signup signupErrors={this.props.signupErrors} signup={this.props.signup} />
-            <Login loginErrors={this.props.loginErrors} login={this.props.login} />
+            <Signup signupErrors={ signupErrors } signup={ signup } />
+            <Login loginErrors={ loginErrors } login={ login } history={history} />
           </div>
         </div>
       </div>

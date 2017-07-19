@@ -16,8 +16,23 @@ const personalGreeting = (currentUser, logout) => (
 	</div>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+
+
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { logout } = this.props;
+    return(
+      <div>
+        <h1>hello</h1>
+        <button className="header-button" onClick={logout}>Log Out</button>
+      </div>
+    );
+  }
+}
 
 export default Greeting;

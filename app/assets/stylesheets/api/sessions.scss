@@ -22,17 +22,19 @@
 .title{
   font-weight: 600;
   vertical-align: center;
-  margin: 10px 220px 30px 220px;
+  margin: 10px 120px 20px 120px;
+  text-align: center;
   color: rgba(38, 139, 210, 1);
+  font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
   font-size: 75px;
 }
 
 .tagline {
-  font-size: 19px;
+  font-size: 25px;
   font-weight: 400;
-  font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
-  margin: 8px 0 32px;
-  color: #999;
+  font-family: 'Open Sans',sans-serif;
+  margin: 8px 0 20px;
+  color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
@@ -50,17 +52,18 @@
 }
 
 .login-form {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   position: relative;
   padding-left: 32px;
   float: left;
   width: 261px;
-
+    h2 {
+      font-family: 'Open Sans',sans-serif;
+    }
 }
 
-//field length going past div.login
 .login-input {
   width: 100%;
   background-color: #eee;
@@ -99,13 +102,16 @@ label {
 }
 
 .signup-form {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   padding-right: 32px;
   float: left;
   width: 261px;
   border-right: 1px solid #e2e2e2;
+    h2 {
+      font-family: 'Open Sans',sans-serif;
+    }
 }
 
 .firstname-lastname {

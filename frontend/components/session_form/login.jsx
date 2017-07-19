@@ -9,6 +9,7 @@ class Login extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.logInAsGuest = this.logInAsGuest.bind(this);
   }
 
   update(field) {
@@ -23,7 +24,9 @@ class Login extends React.Component {
       const user = {
         username: "user",
         password: "password" };
-      this.props.login({user});
+      this.props.login({user}).then(() => {
+        this.props.history.push("/feed");
+      });
     };
   }
 
@@ -31,6 +34,7 @@ class Login extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.login({user});
+    this.props.history.push("/feed");
   }
 
   renderErrors() {
@@ -46,7 +50,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div className="login">
         <form className="login-form" onSubmit={this.handleSubmit}>
@@ -68,11 +71,9 @@ class Login extends React.Component {
               className="login-input"/>
           </div>
 
-
             {this.renderErrors()}
           <div className="login-column">
-
-             <button className="guest-button" onClick={this.logInAsGuest()} >Log in as Guest</button>
+            <button className="guest-button" onClick={this.logInAsGuest()} >Log in as Guest</button>
             <input type="submit" value="Login" className="login-button" />
           </div>
         </form>

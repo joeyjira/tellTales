@@ -31,17 +31,17 @@ class Login extends React.Component {
 
   logInAsGuest(event){
     event.preventDefault();
-    let username = 'GuestUser';
+    let username = 'Link Start';
     let password = 'password123';
 
     for (let i = 0; i < username.length; i++) {
-      setTimeout(() => this.setState({username: username.slice(0, i + 1)}), (i * 50));
+      setTimeout(() => this.setState({username: username.slice(0, i + 1)}), (i * 75));
     }
     for (let i = 0; i < password.length; i++) {
-      setTimeout(() => this.setState({password: password.slice(0, i + 1)}), ((i + username.length) * 50));
+      setTimeout(() => this.setState({password: password.slice(0, i + 1)}), ((i + username.length) * 75));
     }
     const user = {username: 'GuestUser', password: 'password123'};
-    setTimeout(() => this.props.login({user}), (1500));
+    setTimeout(() => this.props.login({user}), (1700));
   }
 
   handleSubmit(e) {

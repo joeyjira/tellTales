@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { login, signup, signupErrors, loginErrors, history } = this.props;
+    const { login, signup, signupErrors, loginErrors } = this.props;
     return (
       <div id="background">
         <div className="main-portal">

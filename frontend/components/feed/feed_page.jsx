@@ -10,10 +10,11 @@ class FeedPage extends React.Component {
 
   render(){
     return(
-      <div>
-        <GreetingContainer />
-        <div className="entire-show-page">
-          <h1>hello</h1>
+      <div className="entire-show-page">
+        <div className="navbar-container">
+        </div>
+        <div className="main-feed">
+          <GreetingContainer />
         </div>
       </div>
     );

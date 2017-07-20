@@ -171,15 +171,17 @@ label {
 }
 
 .login-button:hover{
-  cursor: pointer
+  cursor: pointer;
+  opacity: 0.80
 }
 .guest-button:hover{
-  cursor: pointer
+  cursor: pointer;
+  opacity: 0.80
 }
 .signup-button:hover{
-  cursor: pointer
+  cursor: pointer;
+  opacity: 0.80
 }
-
 
 .guest-button {
   float: right;

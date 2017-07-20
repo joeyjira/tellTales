@@ -33,8 +33,9 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login({user});
-    this.props.history.push("/feed");
+    this.props.login({user}).then(() => {
+      this.props.history.push("/feed");
+    });
   }
 
   renderErrors() {
@@ -59,7 +60,7 @@ class Login extends React.Component {
             <label>USERNAME</label>
             <input type="text"
               value={this.state.user}
-              onChange={this.update('user')}
+              onChange={this.update('username')}
               className="login-input"/>
           </div>
 

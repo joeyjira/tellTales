@@ -19,14 +19,29 @@ class Login extends React.Component {
     });
   }
 
-  logInAsGuest(e) {
-    e.preventDefault();
-      const user = {
-        username: "user",
-        password: "password" };
-      this.props.login({user}).then(() => {
-        this.props.history.replace("/feed");
-      });
+  // logInAsGuest(e) {
+  //   e.preventDefault();
+  //     const user = {
+  //       username: "user",
+  //       password: "password" };
+  //     this.props.login({user}).then(() => {
+  //       this.props.history.replace("/feed");
+  //     });
+  // }
+
+  logInAsGuest(event){
+    event.preventDefault();
+    let username = 'GuestUser';
+    let password = 'password123';
+
+    for (let i = 0; i < username.length; i++) {
+      setTimeout(() => this.setState({username: username.slice(0, i + 1)}), (i * 50));
+    }
+    for (let i = 0; i < password.length; i++) {
+      setTimeout(() => this.setState({password: password.slice(0, i + 1)}), ((i + username.length) * 50));
+    }
+    const user = {username: 'GuestUser', password: 'password123'};
+    setTimeout(() => this.props.login({user}), (1500));
   }
 
   handleSubmit(e) {
@@ -58,7 +73,7 @@ class Login extends React.Component {
           <div className="login-user">
             <label>USERNAME</label>
             <input type="text"
-              value={this.state.user}
+              value={this.state.username}
               onChange={this.update('username')}
               className="login-input"/>
           </div>

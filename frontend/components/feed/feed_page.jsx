@@ -16,6 +16,17 @@ class FeedPage extends React.Component {
         </div>
         <div className="main-feed">
           <GreetingContainer />
+          <div className="feed-page-holder">
+            feed page holder
+            <div className="search-bar-container">
+              <input type="text" value="searchbar"/>
+            </div>
+            <div className="rss-feed-result">
+              rss categories
+              <ul className="rss-list">
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     );

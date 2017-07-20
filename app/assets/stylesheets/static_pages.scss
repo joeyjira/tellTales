@@ -15,6 +15,26 @@
   background-color: #EFEFEF;
 }
 
+.feed-page-holder {
+  height: 100%;
+  width: 100%;
+  background-color: #A9C7FF;
+}
+
+.search-bar-container {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+}
+
+.rss-feed-result {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: #EFEFEF;
+}
+
 .main-feed {
   width: 100%;
 }

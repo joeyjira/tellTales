@@ -14,8 +14,10 @@ import FeedPage from './feed/feed_page';
 
 const App = () => (
   <div>
-    <AuthRoute path="/" component={SessionFormContainer} />
-    <ProtectedRoute path="/feed" component={FeedPage} />
+    <Switch>
+      <ProtectedRoute path="/feed" component={FeedPage} />
+      <AuthRoute path="/" component={SessionFormContainer} />
+    </Switch>
   </div>
 );
 

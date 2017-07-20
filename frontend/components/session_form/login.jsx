@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class Login extends React.Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class Login extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.logInAsGuest = this.logInAsGuest.bind(this);
   }
 
   update(field) {
@@ -82,4 +82,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

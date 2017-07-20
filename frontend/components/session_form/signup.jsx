@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -19,7 +20,9 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.signup({user});
+    this.props.signup({user}).then(() => {
+      this.props.history.push("/feed");
+    });
   }
 
   renderErrors() {
@@ -35,6 +38,7 @@ class Signup extends React.Component {
   }
 
   render() {
+    console.log(this.state.username);
     return(
       <div className="signup">
         <form className="signup-form" onSubmit={this.handleSubmit}>
@@ -66,4 +70,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);

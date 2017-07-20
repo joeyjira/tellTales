@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 import Signup from './signup';
 import Login from './login';
@@ -23,7 +24,7 @@ class SessionForm extends React.Component {
           <h2 className="tagline">Hello World!</h2>
           <div className="session-form-container">
             <Signup signupErrors={ signupErrors } signup={ signup } />
-            <Login loginErrors={ loginErrors } login={ login } history={history} />
+            <Login loginErrors={ loginErrors } login={ login } />
           </div>
         </div>
       </div>
@@ -31,4 +32,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

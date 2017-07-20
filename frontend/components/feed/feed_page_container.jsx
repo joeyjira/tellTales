@@ -3,7 +3,7 @@ import FeedPage from './feed_page';
 
 const mapStateToProps = state => {
   {
-
+    
   }
 };
 

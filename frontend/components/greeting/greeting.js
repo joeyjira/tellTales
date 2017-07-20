@@ -9,9 +9,9 @@ class Greeting extends React.Component {
   render() {
     const { logout } = this.props;
     return(
-      <div>
-        <h1></h1>
-        <button className="header-button" onClick={logout}>Log Out</button>
+      <div className="header-container">
+        <h1>Welcome!</h1>
+        <button className="logout-button" onClick={logout}>Log Out</button>
       </div>
     );
   }

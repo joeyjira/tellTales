@@ -1,8 +1,45 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .entire-show-page {
   display: flex;
-  background-color: #557F7D;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.feedbar-container {
+  height: 100%;
+  width: 600px;
+  background-color: #EFEFEF;
+}
+
+.main-feed {
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #377F7C;
+  height: 60px;
+}
+
+.logout-button {
+  float: right;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  outline: 0;
+  padding: 3px 7px 4px 7px;
+  background: #3e78ad;
+  color: #fff;
+  border: 1px solid #3a66ad;
+  border-radius: 3px;
+}
+
+.logout-button:hover{
+  cursor: pointer
 }

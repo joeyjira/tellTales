@@ -11,7 +11,7 @@
 
 .feedbar-container {
   height: 100%;
-  width: 600px;
+  width: 300px;
   background-color: #EFEFEF;
 }
 
@@ -25,6 +25,7 @@
   justify-content: space-between;
   background-color: #377F7C;
   height: 60px;
+  opacity: 0.9;
 }
 
 .logout-button {
@@ -38,6 +39,7 @@
   color: #fff;
   border: 1px solid #3a66ad;
   border-radius: 3px;
+  transition: 1s;
 }
 
 .logout-button:hover{

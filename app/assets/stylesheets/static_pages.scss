@@ -42,10 +42,17 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   background-color: #377F7C;
+  align-items: center;
   height: 60px;
   opacity: 0.9;
+}
+
+.greeting-container {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: space-between;
 }
 
 .logout-button {

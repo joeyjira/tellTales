@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
   render() {
     const { login, signup, signupErrors, loginErrors } = this.props;
     return (
-      <div id="background">
+      <div id="background" className="background">
         <div className="main-portal">
           <h1 className="title">tellTales</h1>
           <h2 className="tagline">Hello World!</h2>

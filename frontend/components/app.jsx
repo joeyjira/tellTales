@@ -14,7 +14,6 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
   <div>
-    {/*<ProtectedRoute path="/feed" component={GreetingContainer} />*/}
     <Switch>
       <ProtectedRoute path="/feed" component={FeedPageContainer} />
       <AuthRoute path="/" component={SessionFormContainer} />

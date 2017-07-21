@@ -1,19 +1,16 @@
 import merge from 'lodash/merge';
 
 import {
-    RECEIVE_FEED_SOURCES,
     RECEIVE_ARTICLES
-} from '../actions/feed_source_actions';
+} from '../actions/article_actions';
 
 const nullFeed = {
-    sources: []
+    articles: []
 };
 
-const FeedSourceReducer = (state = nullFeed, action) => {
+const ArticleReducer = (state = nullFeed, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_FEED_SOURCES:
-            return action.feedSources;
         case RECEIVE_ARTICLES:
             return action.articles;
         default:
@@ -21,5 +18,5 @@ const FeedSourceReducer = (state = nullFeed, action) => {
     }
 };
 
-export default FeedSourceReducer;
+export default ArticleReducer;
 

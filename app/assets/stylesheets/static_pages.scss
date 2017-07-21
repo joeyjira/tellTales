@@ -78,11 +78,13 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  a {
+    margin: 20px 20px 20px 20px;
+  }
 }
 
 .source-item {
   height: 202px;
   width: 202px;
   background-color: red;
-  margin: 20px 20px 20px 20px;
 }

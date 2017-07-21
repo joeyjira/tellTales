@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {logout, login, signup} from './actions/session_actions';
-import { fetchFeedSources, fetchArticles } from './actions/feed_source_actions';
+import { fetchFeedSources } from './actions/feed_source_actions';
+import { fetchArticles } from './actions/article_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;

@@ -10,13 +10,14 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 import GreetingContainer from "../greeting/greeting_container";
 import SourceContainer from "../source/source_container";
+import ArticleListContainer from "../article/article_list_container";
 
 class FeedPage extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchFeedSources();
   }
 
@@ -25,7 +26,7 @@ class FeedPage extends React.Component {
     // const feedItems = feedSources.sources.map(feed =>
     //   <FeedItem key={feed.id} name={feed.name} description={feed.description} />
     // );  
-
+    console.log(this.props);
     return (
       <div className="entire-show-page">
         <div className="feedbar-container">
@@ -41,10 +42,12 @@ class FeedPage extends React.Component {
             <div className="rss-feed-result">
               feed result
               {/*rss categories*/}
-              {/*<Switch>*/}
-                <ProtectedRoute path="/feed" component={SourceContainer} />
-                {/*<ProtectedRoute path="/articles" component={ArticlesContainer} />*/}
-              {/*</Switch>*/}
+              {/*<SourceContainer />*/}
+              <Switch>
+                <Route path="/feed/result" component={SourceContainer} />
+                <Route path="/feed/source/:sourceId" component={ArticleListContainer} />
+              </Switch>
+
               <div className="rss-list">
                 rss-list
               </div>

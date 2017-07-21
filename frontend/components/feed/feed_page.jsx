@@ -1,15 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import GreetingContainer from '../greeting/greeting_container';
+import GreetingContainer from "../greeting/greeting_container";
+import FeedItem from "./feed_item";
 
 class FeedPage extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-  render(){
-    return(
+  componentWillMount() {
+    this.props.fetchFeedSources();
+  }
+
+  render() {
+    const { feedSources } = this.props;
+    const feedItems = feedSources.sources.map(feed =>
+      <FeedItem key={feed.id} name={feed.name} description={feed.description} />
+    );  
+
+    return (
       <div className="entire-show-page">
         <div className="feedbar-container">
           <h1>This is the feedbar-container</h1>
@@ -19,12 +29,11 @@ class FeedPage extends React.Component {
           <div className="feed-page-holder">
             feed page holder
             <div className="search-bar-container">
-              <input type="text" value="searchbar"/>
+              <input type="text" value="searchbar" />
             </div>
             <div className="rss-feed-result">
               rss categories
-              <ul className="rss-list">
-              </ul>
+              <ul className="rss-list">{feedItems}</ul>
             </div>
           </div>
         </div>

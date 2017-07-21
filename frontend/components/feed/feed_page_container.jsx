@@ -1,16 +1,13 @@
-import { connect } from 'react-redux';
-import FeedPage from './feed_page';
+import { connect } from "react-redux";
+import FeedPage from "./feed_page";
 
-const mapStateToProps = state => {
-  {
-    
-  }
-};
-
-const mapDispatchToProps = dispatch => ({
+const mapStateToProps = ({ session, feedSource }) => ({
+  currentUser: session.currentUser,
+  feedSources: feedSource
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FeedPage);
+const mapDispatchToProps = dispatch => ({
+  fetchFeedSources: () => dispatch(fetchFeedSources())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedPage);

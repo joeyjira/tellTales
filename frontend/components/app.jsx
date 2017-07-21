@@ -10,12 +10,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SessionFormContainer from './session_form/session_form_container';
 import FeedPageContainer from './feed/feed_page_container';
-import FeedPage from './feed/feed_page';
 
 const App = () => (
   <div>
     <Switch>
-      <ProtectedRoute path="/feed" component={FeedPage} />
+      <ProtectedRoute path="/feed" component={FeedPageContainer} />
       <AuthRoute path="/" component={SessionFormContainer} />
     </Switch>
   </div>

@@ -6,7 +6,7 @@
   flex-direction: row;
   height: 100%;
   width: 100%;
-  position: fixed;
+  // position: fixed;
 }
 
 .feedbar-container {
@@ -64,5 +64,4 @@
 
 .logout-button:hover{
   cursor: pointer;
-  opacity: 0.5
 }

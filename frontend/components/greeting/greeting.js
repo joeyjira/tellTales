@@ -7,10 +7,10 @@ class Greeting extends React.Component {
   }
 
   render() {
-    const { logout } = this.props;
+    const { logout, currentUser } = this.props;
     return(
       <div className="header-container">
-        <h1>Welcome!</h1>
+        <h1>Welcome {currentUser.username}!</h1>
         <button className="logout-button" onClick={logout}>Log Out</button>
       </div>
     );

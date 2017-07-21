@@ -33,7 +33,9 @@ class FeedPage extends React.Component {
             </div>
             <div className="rss-feed-result">
               rss categories
-              <ul className="rss-list">{feedItems}</ul>
+              <div className="rss-list">
+                {feedItems}
+              </div>
             </div>
           </div>
         </div>

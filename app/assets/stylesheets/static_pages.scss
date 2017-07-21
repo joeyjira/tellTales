@@ -16,9 +16,10 @@
 }
 
 .feed-page-holder {
-  height: 100%;
+  height: 90vh;
   width: 100%;
   background-color: #A9C7FF;
+  overflow-y: auto;
 }
 
 .search-bar-container {
@@ -28,7 +29,6 @@
 }
 
 .rss-feed-result {
-  height: 100%;
   margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
@@ -64,4 +64,18 @@
 
 .logout-button:hover{
   cursor: pointer;
+}
+
+.rss-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.feed-source-item {
+  height: 202px;
+  width: 202px;
+  background-color: red;
+  margin: 20px 20px 20px 20px;
 }

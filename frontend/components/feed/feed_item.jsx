@@ -10,9 +10,9 @@ class FeedItem extends React.Component {
     console.log(this.props);
     const {name, description} = this.props;
     return (
-      <li className="feed-source-list">
+      <div className="feed-source-item">
           {name} 
-      </li>
+      </div>
     );
   }
 }

@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 import GreetingContainer from "../greeting/greeting_container";
-import FeedItem from "./feed_item";
+import SourceContainer from "../source/source_container";
 
 class FeedPage extends React.Component {
   constructor(props) {
@@ -14,10 +21,10 @@ class FeedPage extends React.Component {
   }
 
   render() {
-    const { feedSources } = this.props;
-    const feedItems = feedSources.sources.map(feed =>
-      <FeedItem key={feed.id} name={feed.name} description={feed.description} />
-    );  
+    // const { feedSources } = this.props;
+    // const feedItems = feedSources.sources.map(feed =>
+    //   <FeedItem key={feed.id} name={feed.name} description={feed.description} />
+    // );  
 
     return (
       <div className="entire-show-page">
@@ -32,9 +39,14 @@ class FeedPage extends React.Component {
               <input type="text" value="searchbar" />
             </div>
             <div className="rss-feed-result">
-              rss categories
+              feed result
+              {/*rss categories*/}
+              {/*<Switch>*/}
+                <ProtectedRoute path="/feed" component={SourceContainer} />
+                {/*<ProtectedRoute path="/articles" component={ArticlesContainer} />*/}
+              {/*</Switch>*/}
               <div className="rss-list">
-                {feedItems}
+                rss-list
               </div>
             </div>
           </div>

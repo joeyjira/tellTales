@@ -73,14 +73,14 @@
   cursor: pointer;
 }
 
-.rss-list {
+.source-item-list {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.feed-source-item {
+.source-item {
   height: 202px;
   width: 202px;
   background-color: red;

@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
   fetchFeedSources: () => dispatch(fetchFeedSources())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FeedPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SourceResult);

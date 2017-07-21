@@ -7,9 +7,12 @@ class ArticleItem extends React.Component {
   }
 
   render() {
+    const {title, description, image} = this.props;
     return (
         <div className="article-item">
-            {this.props.title}
+            <img src={image} className="article-image"/>
+            <h2>{title}</h2>
+            <p>{description}</p>
         </div>
     );
   }

@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Route,
-  Redirect,
-  Switch,
-  Link,
-  HashRouter
-} from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
-import ArticleItem from './article_item';
+import ArticleItem from "./article_item";
 
 class ArticleList extends React.Component {
   constructor(props) {
@@ -15,26 +9,30 @@ class ArticleList extends React.Component {
     this.id = props.match.params.sourceId;
   }
 
-  componentWillMount () {
-      this.props.fetchArticles(this.id);
+  componentWillMount() {
+    this.props.fetchArticles(this.id);
   }
 
   render() {
-    
-    const {article} = this.props;
-    const {articles} = article;
+    const { article } = this.props;
+    const { articles } = article;
     console.log("JOEY", articles);
-    const articleItems = articles.map((element, idx) => <ArticleItem key={idx} title={element.title}/>)
+    const articleItems = articles.map((element, idx) =>
+      <ArticleItem
+        key={idx}
+        title={element.title}
+        description={element.description}
+        image={element.urlToImage}
+      />
+    );
 
     return (
-        <div className="article-item-list">
-            <div className="back-button">
-                <Link to="/feed/result">
-                    Back
-                </Link>
-            </div>
-            {articleItems}
+      <div className="article-item-list">
+        <div className="back-button">
+          <Link to="/feed/result">Back</Link>
         </div>
+        {articleItems}
+      </div>
     );
   }
 }

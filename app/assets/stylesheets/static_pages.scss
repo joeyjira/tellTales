@@ -97,6 +97,12 @@
   height: 202px;
   width: 202px;
   background: rgb(255, 255, 255);
+  border: 2px solid rgb(247, 247, 247);
+}
+
+.source-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 6px 10px;
+  transform: translateY(-5px);
 }
 
 .article-item {

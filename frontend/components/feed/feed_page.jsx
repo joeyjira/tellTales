@@ -35,7 +35,7 @@ class FeedPage extends React.Component {
               <h1>Hello World!</h1>
             </div>
             <div className="search-bar-container">
-              <input type="text" placeholder="Discover" />
+              <input type="text" placeholder="Search Category" />
             </div>
             <div className="rss-feed-result">
 

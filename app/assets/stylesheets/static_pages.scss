@@ -56,8 +56,7 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  background-color: rgb(29, 91, 136);
-  color: white;
+  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(233, 233, 233);
   align-items: center;
   height: 60px;
@@ -67,6 +66,7 @@
     padding-left: 10px;
     font-family: 'Open Sans',sans-serif;
     font-size: 30px;
+    color: rgb(29, 91, 136)
   }
 }
 
@@ -116,7 +116,7 @@
   height: 202px;
   width: 202px;
   background: rgb(255, 255, 255);
-  border: 2px solid rgb(247, 247, 247);
+  border: 2px solid rgb(230, 230, 230);
 }
 
 .source-item:hover {

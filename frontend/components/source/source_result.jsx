@@ -10,7 +10,6 @@ class SourceResult extends React.Component {
 
   render() {
     const { feedSources } = this.props;
-    console.log("this is source result", feedSources.sources);
     const sourceItems = feedSources.sources.map(feed =>
       <SourceItem
         key={feed.id}
@@ -23,7 +22,7 @@ class SourceResult extends React.Component {
 
     return (
       <div className="source-item-list">
-        {sourceItems}
+          {sourceItems}
       </div>
     );
   }

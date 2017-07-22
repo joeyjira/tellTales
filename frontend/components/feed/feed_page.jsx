@@ -38,6 +38,7 @@ class FeedPage extends React.Component {
               <input type="text" placeholder="Discover" />
             </div>
             <div className="rss-feed-result">
+
               <Switch>
                 <Route path="/feed/result" component={SourceContainer} />
                 <Route path="/feed/source/:sourceId" component={ArticleListContainer} />

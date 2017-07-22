@@ -7,9 +7,7 @@ class SourceItem extends React.Component {
   }
 
   render() {
-    console.log("FOR IMAGES", this.props)
     const { name, id, url } = this.props;
-    // const regExpNew = new RegExp(/(\w)\/\w*/,"$1");
     const imageUrl = url ? url.replace(/(\w)\/\w.*/,"$1") : "";
 
     return (

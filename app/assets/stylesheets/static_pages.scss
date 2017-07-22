@@ -10,7 +10,7 @@
 
 .feedbar-container {
   height: 100%;
-  width: 300px;
+  min-width: 250px;
   background-color: rgb(30, 38, 47);
   color: white;
 }
@@ -172,8 +172,10 @@
   flex-direction: row;
   align-items: center;
   height: 60px;
+  min-width: 400px;
   font-size: 50px;
   padding-top: 60px;
+  padding-left: 70px;
   font-family: 'Roboto', sans-serif;
   color: rgb(69, 69, 69);
   z-index: +1;

@@ -22,11 +22,6 @@ class FeedPage extends React.Component {
   }
 
   render() {
-    // const { feedSources } = this.props;
-    // const feedItems = feedSources.sources.map(feed =>
-    //   <FeedItem key={feed.id} name={feed.name} description={feed.description} />
-    // );  
-    console.log(this.props);
     return (
       <div className="entire-show-page">
         <div className="feedbar-container">
@@ -41,8 +36,6 @@ class FeedPage extends React.Component {
             </div>
             <div className="rss-feed-result">
               feed result
-              {/*rss categories*/}
-              {/*<SourceContainer />*/}
               <Switch>
                 <Route path="/feed/result" component={SourceContainer} />
                 <Route path="/feed/source/:sourceId" component={ArticleListContainer} />

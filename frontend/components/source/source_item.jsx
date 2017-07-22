@@ -16,6 +16,9 @@ class SourceItem extends React.Component {
       <Link to={`/feed/source/${id}`}>
         <div className="source-item">
           <img src={`http://logo.clearbit.com/${imageUrl}?size=202`} className="logo-image"/>
+          <div className="source-name">
+            {name}
+          </div>
         </div>
       </Link>
     );

@@ -43,10 +43,12 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  background-color: rgb(53, 145, 210);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(233, 233, 233);
   align-items: center;
   height: 60px;
   opacity: 0.9;
+  position: static;
 }
 
 .greeting-container {
@@ -68,6 +70,7 @@
   border: 1px solid #3a66ad;
   border-radius: 3px;
   transition: 1s;
+  margin-right: 5%;
 }
 
 .logout-button:hover {
@@ -82,11 +85,17 @@
   a {
     margin: 20px 20px 20px 20px;
   }
+  background-color: rgb(250, 250, 250);
 }
 
 .source-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 202px;
   width: 202px;
+  background: rgb(255, 255, 255);
 }
 
 .article-item {
@@ -116,5 +125,9 @@
 
 .logo-image {
   height: auto;
-  width: 202px;
+  width: 60px;
+}
+
+.source-name {
+  margin-top: 30px;
 }

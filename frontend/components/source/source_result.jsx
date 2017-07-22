@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Route,
-  Redirect,
-  Switch,
-  Link,
-  HashRouter
-} from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
-import SourceItem from './source_item';
+import SourceItem from "./source_item";
 
 class SourceResult extends React.Component {
   constructor(props) {
@@ -15,15 +9,22 @@ class SourceResult extends React.Component {
   }
 
   render() {
-    const { feedSources } = this.props
+    const { feedSources } = this.props;
     console.log("this is source result", feedSources.sources);
-    const sourceItems = feedSources.sources.map(feed => 
-        <SourceItem key={feed.id} name={feed.name} description={feed.description} id={feed.id} />)
+    const sourceItems = feedSources.sources.map(feed =>
+      <SourceItem
+        key={feed.id}
+        name={feed.name}
+        description={feed.description}
+        id={feed.id}
+        url={feed.url}
+      />
+    );
 
     return (
-        <div className="source-item-list">
-            {sourceItems}
-        </div>
+      <div className="source-item-list">
+        {sourceItems}
+      </div>
     );
   }
 }

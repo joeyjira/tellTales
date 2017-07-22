@@ -12,13 +12,13 @@
 .feedbar-container {
   height: 100%;
   width: 300px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
 }
 
 .feed-page-holder {
   height: 90vh;
   width: 100%;
-  background-color: #A9C7FF;
+  background-color: #a9c7ff;
   overflow-y: auto;
 }
 
@@ -32,7 +32,7 @@
   margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
-  background: #EFEFEF;
+  background: #efefef;
 }
 
 .main-feed {
@@ -42,7 +42,7 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  background-color: #377F7C;
+  background-color: #377f7c;
   align-items: center;
   height: 60px;
   opacity: 0.9;
@@ -69,7 +69,7 @@
   transition: 1s;
 }
 
-.logout-button:hover{
+.logout-button:hover {
   cursor: pointer;
 }
 
@@ -86,15 +86,34 @@
 .source-item {
   height: 202px;
   width: 202px;
-  background-color: red;
 }
 
 .article-item {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
   min-height: 124px;
+  width: 100%;
 }
 
-.article-image{
+.article-image {
+  height: auto;
+  width: 150px;
+}
+
+.article-info {
+  flex: 1;
+}
+
+.article-image-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 78px;
   width: 130px;
+  overflow: hidden;
+}
+
+.logo-image {
+  height: auto;
+  width: 202px;
 }

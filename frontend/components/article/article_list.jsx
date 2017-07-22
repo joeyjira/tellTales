@@ -16,7 +16,7 @@ class ArticleList extends React.Component {
   render() {
     const { article } = this.props;
     const { articles } = article;
-    console.log("JOEY", articles);
+    // console.log("JOEY", articles);
     const articleItems = articles.map((element, idx) =>
       <ArticleItem
         key={idx}

@@ -20,9 +20,25 @@ class SourceResult extends React.Component {
   }
 
   render() {
+    const categories = [
+      "business",
+      "entertainment",
+      "gaming",
+      "general",
+      "music",
+      "politics",
+      "science-and-nature",
+      "sport",
+      "technology"
+    ];
+
     const { feedSources } = this.props;
     const { sources } = feedSources;
-    const filteredSources = sources.filter((source) => source.category === this.state.search)
+    const filteredSources = sources.filter(
+      source =>
+        source.category.includes(this.state.search) ||
+        this.state.search.includes(source.category)
+    );
     const sourceItems = filteredSources.map(feed =>
       <SourceItem
         key={feed.id}
@@ -33,25 +49,14 @@ class SourceResult extends React.Component {
       />
     );
 
-    // const sourceItemsFiltered = slicedSources.forEach((source) => {
-    //   if (source.category != this.state) {
-    //     continue;
-    //   } else {
-    //     return(
-    //       <SourceItem
-    //     key={source.id}
-    //     name={source.name}
-    //     description={source.description}
-    //     id={source.id}
-    //     url={source.url}
-    //   />
-    //     )
-    //   }
-    // })
     return (
       <div>
         <div className="search-bar-container">
-          <input type="text" placeholder="Search Category" onChange={this.update("search")} />
+          <input
+            type="text"
+            placeholder="Search Category"
+            onChange={this.update("search")}
+          />
         </div>
         <div className="source-item-list">
           {sourceItems}

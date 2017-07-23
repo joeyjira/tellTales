@@ -17,7 +17,7 @@ class FeedPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main-container">
         <div className="entire-show-page">
           <div className="feedbar-container">
             <h1>This is the feedbar-container</h1>

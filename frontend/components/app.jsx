@@ -8,7 +8,7 @@ import GreetingContainer from "./greeting/greeting_container";
 import ArticleListContainer from "./article/article_list_container";
 
 const App = () =>
-  <div>
+  <div className="routes-container">
     <Switch>
       <AuthRoute exact path="/" component={SessionFormContainer} />
       <ProtectedRoute path="/feed" component={FeedPageContainer} />

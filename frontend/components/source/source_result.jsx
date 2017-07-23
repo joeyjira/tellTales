@@ -50,12 +50,13 @@ class SourceResult extends React.Component {
     );
 
     return (
-      <div>
+      <div className="search-and-return">
         <div className="search-bar-container">
           <input
             type="text"
             placeholder="Search Category"
             onChange={this.update("search")}
+            list="categories"
           />
         </div>
         <div className="source-item-list">

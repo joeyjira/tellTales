@@ -9,7 +9,10 @@ class SourceItem extends React.Component {
 
   render() {
     const { name, id, url } = this.props;
-    const imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
+    let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
+    if (imageUrl === "http://espn.go.com") {
+      imageUrl = "http://espn.com"
+    }
 
     return (
       <Link to={`/feed/source/${id}`}>

@@ -36,8 +36,14 @@ class SourceResult extends React.Component {
     const { sources } = feedSources;
     const filteredSources = sources.filter(
       source =>
-        source.category.includes(this.state.search) ||
-        this.state.search.includes(source.category)
+        source.category
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase()) ||
+        this.state.search
+          .toLowerCase()
+          .includes(source.category.toLowerCase()) ||
+        source.name.toLowerCase().includes(this.state.search.toLowerCase()) ||
+        this.state.search.toLowerCase().includes(source.name.toLowerCase())
     );
     const sourceItems = filteredSources.map(feed =>
       <SourceItem
@@ -51,6 +57,10 @@ class SourceResult extends React.Component {
 
     return (
       <div className="search-and-return">
+        <div className="page-tagline">
+          <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+          <h1>Hello World!</h1>
+        </div>
         <div className="search-bar-container">
           <input
             type="text"

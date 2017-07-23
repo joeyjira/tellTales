@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 import SourceItem from "./source_item";
 
@@ -68,6 +67,17 @@ class SourceResult extends React.Component {
             onChange={this.update("search")}
             list="categories"
           />
+          <datalist id="categories">
+            <option value="business"/>
+            <option value="entertainment"/>
+            <option value="gaming"/>
+            <option value="general"/>
+            <option value="music"/>
+            <option value="politics"/>
+            <option value="science-and-nature"/>
+            <option value="sport"/>
+            <option value="technology"/>
+          </datalist>
         </div>
         <div className="source-item-list">
           {sourceItems}

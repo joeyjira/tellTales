@@ -3,18 +3,13 @@ import { withRouter } from "react-router";
 
 import Signup from "./signup";
 import Login from "./login";
-import { fadeIn, fadeOut } from 'react-animations';
+import { fadeIn } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
   fadeIn: {
     animationName: fadeIn,
     animationDuration: '5s'
-  },
-
-  fadeOut: {
-    animationName: fadeOut,
-    animationDuration: '3s'
   }
 })
 

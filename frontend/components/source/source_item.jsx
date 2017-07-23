@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class SourceItem extends React.Component {
   constructor(props) {

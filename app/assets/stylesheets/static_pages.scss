@@ -64,9 +64,9 @@
   opacity: 0.9;
   h1 {
     padding-left: 10px;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 30px;
-    color: rgb(29, 91, 136)
+    color: rgb(29, 91, 136);
   }
 }
 
@@ -120,7 +120,8 @@
 }
 
 .source-item:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 6px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 28px,
+    rgba(0, 0, 0, 0.22) 0px 6px 10px;
   transform: translateY(-5px);
 }
 
@@ -184,4 +185,13 @@
     height: 50px;
     padding-right: 10px;
   }
+}
+
+.anim-appear {
+  opacity: 0.01;
+}
+
+.anim-appear.anim-appear-active {
+  opacity: 2;
+  transition: opacity 3s ease-in;
 }

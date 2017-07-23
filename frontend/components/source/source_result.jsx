@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 import SourceItem from "./source_item";
 
@@ -22,7 +23,7 @@ class SourceResult extends React.Component {
 
     return (
       <div className="source-item-list">
-          {sourceItems}
+        {sourceItems}
       </div>
     );
   }

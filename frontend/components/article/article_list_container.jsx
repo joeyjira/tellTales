@@ -7,7 +7,7 @@ const mapStateToProps = ({ session, articles }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchArticles: (source) => dispatch(fetchArticles(source))
+  fetchArticles: source => dispatch(fetchArticles(source))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

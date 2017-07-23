@@ -1,5 +1,5 @@
-import React from 'react';
-import { withRouter } from 'react-router';
+import React from "react";
+import { withRouter } from "react-router";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -7,57 +7,63 @@ class Signup extends React.Component {
 
     this.state = {
       username: "",
-      password: "" };
+      password: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.signup({user}).then(() => {
+    this.props.signup({ user }).then(() => {
       this.props.history.push("/feed");
     });
   }
 
   renderErrors() {
-    return(
+    return (
       <ul>
-        {this.props.signupErrors.map((error, i) => (
+        {this.props.signupErrors.map((error, i) =>
           <li className="errors" key={`error-${i}`}>
             {error}
           </li>
-        ))}
+        )}
       </ul>
     );
   }
 
   render() {
     console.log(this.state.username);
-    return(
+    return (
       <div className="signup">
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <h2>Sign Up</h2>
 
           <div className="user">
             <label>USERNAME</label>
-            <input type="text"
+            <input
+              type="text"
               value={this.state.user}
-              onChange={this.update('username')}
-              className="login-input"/>
+              onChange={this.update("username")}
+              className="login-input"
+            />
           </div>
 
           <div className="password">
             <label>PASSWORD</label>
-            <input type="password"
+            <input
+              type="password"
               value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"/>
+              onChange={this.update("password")}
+              className="login-input"
+            />
           </div>
 
           <div className="signup-column">

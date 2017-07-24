@@ -1,7 +1,15 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import Masonry from 'react-masonry-component';
 
 import ArticleItem from "./article_item";
+
+const masonryOptions = {
+  fitWidth: true,
+  stagger: 100,
+  gutter: 3,
+  transitionDuration: '0.8s'
+};
 
 class ArticleList extends React.Component {
   constructor(props) {
@@ -52,7 +60,12 @@ class ArticleList extends React.Component {
         <div className="back-button">
           <Link to="/feed/result">Back</Link>
         </div>
-        {articleItems}
+        <Masonry
+          className={'article-list-masonry'}
+          elementType={'div'}
+          options={masonryOptions}>
+          {articleItems}
+        </Masonry>
       </div>
     );
   }

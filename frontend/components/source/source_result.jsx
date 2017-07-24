@@ -1,7 +1,15 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import Masonry from 'react-masonry-component';
 
 import SourceItem from "./source_item";
+
+const masonryOptions = {
+  fitWidth: true,
+  stagger: 100,
+  gutter: 50,
+  transitionDuration: '0.8s'
+};
 
 class SourceResult extends React.Component {
   constructor(props) {
@@ -70,7 +78,12 @@ class SourceResult extends React.Component {
           </datalist>
         </div>
         <div className="source-item-list">
-          {sourceItems}
+          <Masonry
+            className={'source-list-masonry'}
+            elementType={'div'}
+            options={masonryOptions}>
+            {sourceItems}
+          </Masonry>
         </div>
       </div>
     );

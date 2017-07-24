@@ -14,17 +14,19 @@ class SourceItem extends React.Component {
     }
 
     return (
-      <Link to={`/feed/source/${id}`}>
-        <div className="source-item">
-          <img
-            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
-            className="logo-image"
-          />
-          <div className="source-name">
-            {name}
+      <div>
+        <Link to={`/feed/source/${id}`}>
+          <div className="source-item">
+            <img
+              src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+              className="logo-image"
+            />
+            <div className="source-name">
+              {name}
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   }
 }

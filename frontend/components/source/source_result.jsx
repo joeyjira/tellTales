@@ -58,15 +58,15 @@ class SourceResult extends React.Component {
             list="categories"
           />
           <datalist id="categories">
-            <option value="#business"></option>
-            <option value="#entertainment"></option>
-            <option value="#gaming"></option>
-            <option value="#general"></option>
-            <option value="#music"></option>
-            <option value="#politics"></option>
-            <option value="#science-and-nature"></option>
-            <option value="#sport"></option>
-            <option value="#technology"></option>
+            <option value="Business"></option>
+            <option value="Entertainment"></option>
+            <option value="Gaming"></option>
+            <option value="General"></option>
+            <option value="Music"></option>
+            <option value="Politics"></option>
+            <option value="Science-and-nature"></option>
+            <option value="Sports"></option>
+            <option value="Technology"></option>
           </datalist>
         </div>
         <div className="source-item-list">

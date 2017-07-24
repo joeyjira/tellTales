@@ -26,7 +26,7 @@ html, body, #root, .main-container, .routes-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 90%;
+  max-height: 90vh;
   width: 100%;
   background-color: rgb(250, 250, 250);
   overflow-y: auto;
@@ -233,4 +233,9 @@ html, body, #root, .main-container, .routes-container {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     z-index: 100;
+}
+
+.iframe{
+  height: 85vh;
+  width: 100%;
 }

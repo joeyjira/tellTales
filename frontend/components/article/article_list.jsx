@@ -40,6 +40,9 @@ class ArticleList extends React.Component {
 
     return (
       <div className="article-item-list">
+          <button className="guest-button">
+            Follow
+          </button>
          <div className="source-item">
           <img
             src={`http://logo.clearbit.com/${imageUrl}?size=202`}

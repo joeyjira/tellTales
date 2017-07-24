@@ -15,7 +15,7 @@ class Api::CollectionsController < ApplicationController
 
     def create
         @collection = Collection.new(collection_params)
-        @collection.author_id = current_user.id
+        @collection.user_id = current_user.id
         if @collection.save!
             render "/api/collections/show"
         else

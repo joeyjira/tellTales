@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Collection.destroy_all
 
 guest = User.create(username: "GuestUser", password: "password123")
+
+guest_collection1 = Collection.create(title: "Sports", user_id: 1)
+guest_collection2 = Collection.create(title: "General", user_id: 1)

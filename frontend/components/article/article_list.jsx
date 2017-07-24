@@ -48,9 +48,9 @@ class ArticleList extends React.Component {
 
     return (
       <div className="article-item-list">
-         <div className="source-item">
+         <div className="source-tag">
           <img
-            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+            src={`http://logo.clearbit.com/${imageUrl}?size=300`}
             className="logo-image"
           />
           <div className="source-name">

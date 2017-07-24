@@ -143,8 +143,8 @@ html, body, #root, .main-container, .routes-container {
 .article-item-list {
   background-color: rgb(255, 255, 255);
   border-left: 1px solid rgb(239, 239, 239);
-  border-top: 1px solid rgb(239, 239, 239);
   border-right: 1px solid rgb(239, 239, 239);
+  min-width: 75%;
 }
 
 .article-item {
@@ -259,10 +259,14 @@ html, body, #root, .main-container, .routes-container {
     margin: 0 auto;
     min-width: 800px;
   }
-  
+}
 
-//  .user-page-photos {
-//     width: 400px;
-//     height: auto;
-//   }
+.source-tag {
+  display: flex;
+  flex-direction: row;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
 }

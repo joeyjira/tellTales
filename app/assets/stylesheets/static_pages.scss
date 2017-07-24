@@ -121,7 +121,6 @@ html, body, #root, .main-container, .routes-container {
     text-decoration: none;
   }
   background-color: rgb(250, 250, 250);
-  margin-top: 7%;
 }
 
 .source-item {
@@ -144,8 +143,8 @@ html, body, #root, .main-container, .routes-container {
 .article-item-list {
   background-color: rgb(255, 255, 255);
   border-left: 1px solid rgb(239, 239, 239);
+  border-top: 1px solid rgb(239, 239, 239);
   border-right: 1px solid rgb(239, 239, 239);
-  min-width: 75%;
 }
 
 .article-item {
@@ -153,10 +152,6 @@ html, body, #root, .main-container, .routes-container {
   flex-direction: row;
   min-height: 124px;
   width: 100%;
-}
-
-.article-item:hover {
-  cursor: pointer;
 }
 
 .article-image {
@@ -198,12 +193,12 @@ html, body, #root, .main-container, .routes-container {
 .page-tagline {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   height: 60px;
   min-width: 400px;
   font-size: 50px;
   padding-top: 60px;
+  padding-left: 70px;
   font-family: 'Roboto', sans-serif;
   color: rgb(69, 69, 69);
   z-index: +1;
@@ -212,18 +207,12 @@ html, body, #root, .main-container, .routes-container {
     height: 50px;
     padding-right: 10px;
   }
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .search-and-return {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .article-modal {
@@ -231,7 +220,7 @@ html, body, #root, .main-container, .routes-container {
     top: 50%;
     left: 50%;
     min-width: 75%;
-    height: 75%;
+    min-height: 75%;
     border: 2px solid lightgray;
     border-radius: 10px;
     box-shadow: 1px 1px 7px gray;
@@ -244,43 +233,4 @@ html, body, #root, .main-container, .routes-container {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     z-index: 100;
-  iframe{
-    width: 100%;
-    height: 100%;
-  }
-}
-
-// .source-list-masonry {
-//   min-width: 700px;
-// }
-
-.source-list-masonry {
-  min-width: 100%;
-  height: 100%;
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media all and (min-width: 900px) {
-
- .source-list-masonry {
-    min-width: 800px;
-  }
-}
-
-.source-tag {
-  display: flex;
-  flex-direction: row;
-
-  img {
-    height: 100px;
-    width: 100px;
-  }
-}
-
-.center-masonry {
-
 }

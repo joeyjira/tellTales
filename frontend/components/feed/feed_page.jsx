@@ -25,6 +25,7 @@ class FeedPage extends React.Component {
           <div className="main-feed">
             <GreetingContainer />
             <div className="feed-page-holder">
+              <div className="rss-feed-result">
                 <Switch>
                   <Route path="/feed/result" component={SourceContainer} />
                   <Route
@@ -33,6 +34,7 @@ class FeedPage extends React.Component {
                   />
                 </Switch>
                 <div className="rss-list" />
+              </div>
             </div>
           </div>
         </div>

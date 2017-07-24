@@ -1,15 +1,7 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import Masonry from 'react-masonry-component';
 
 import ArticleItem from "./article_item";
-
-const masonryOptions = {
-  fitWidth: true,
-  stagger: 100,
-  gutter: 3,
-  transitionDuration: '0.8s'
-};
 
 class ArticleList extends React.Component {
   constructor(props) {
@@ -48,9 +40,9 @@ class ArticleList extends React.Component {
 
     return (
       <div className="article-item-list">
-         <div className="source-tag">
+         <div className="source-item">
           <img
-            src={`http://logo.clearbit.com/${imageUrl}?size=300`}
+            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
             className="logo-image"
           />
           <div className="source-name">
@@ -60,14 +52,7 @@ class ArticleList extends React.Component {
         <div className="back-button">
           <Link to="/feed/result">Back</Link>
         </div>
-        <div className="center-masonry">
-          <Masonry
-            className={'article-list-masonry'}
-            elementType={'div'}
-            options={masonryOptions}>
-            {articleItems}
-          </Masonry>
-        </div>
+        {articleItems}
       </div>
     );
   }

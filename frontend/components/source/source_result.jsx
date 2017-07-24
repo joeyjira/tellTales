@@ -19,18 +19,6 @@ class SourceResult extends React.Component {
   }
 
   render() {
-    const categories = [
-      "business",
-      "entertainment",
-      "gaming",
-      "general",
-      "music",
-      "politics",
-      "science-and-nature",
-      "sport",
-      "technology"
-    ];
-
     const { feedSources } = this.props;
     const { sources } = feedSources;
     const filteredSources = sources.filter(
@@ -57,7 +45,9 @@ class SourceResult extends React.Component {
     return (
       <div className="search-and-return">
         <div className="page-tagline">
+          <div className="animated infinite pulse">
           <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+          </div>
           <h1>Hello World!</h1>
         </div>
         <div className="search-bar-container">
@@ -68,15 +58,15 @@ class SourceResult extends React.Component {
             list="categories"
           />
           <datalist id="categories">
-            <option value="business"/>
-            <option value="entertainment"/>
-            <option value="gaming"/>
-            <option value="general"/>
-            <option value="music"/>
-            <option value="politics"/>
-            <option value="science-and-nature"/>
-            <option value="sport"/>
-            <option value="technology"/>
+            <option value="#business"></option>
+            <option value="#entertainment"></option>
+            <option value="#gaming"></option>
+            <option value="#general"></option>
+            <option value="#music"></option>
+            <option value="#politics"></option>
+            <option value="#science-and-nature"></option>
+            <option value="#sport"></option>
+            <option value="#technology"></option>
           </datalist>
         </div>
         <div className="source-item-list">

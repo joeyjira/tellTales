@@ -7,11 +7,11 @@ class ArticleList extends React.Component {
   constructor(props) {
     super(props);
     this.id = props.match.params.sourceId;
+    this.source = this.props.feedSources.sources;
   }
 
   componentWillMount() {
-    this.props.fetchArticles(this.id);
-    this.props.fetchFeedSources();
+    this.props.fetchArticles(this.id).then(this.props.fetchFeedSources());
   }
 
   render() {
@@ -20,20 +20,27 @@ class ArticleList extends React.Component {
     const { sources } = feedSources;
 
     const matchSource = sources.filter(source => source.id === article.source)
-    // let imageUrl = matchSource.first.url;
-    console.log("show article list", matchSource);
+    let url = matchSource[0] ? matchSource[0].url : "";
+    let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
+    if (imageUrl === "http://espn.go.com") {
+      imageUrl = "http://espn.com"
+    }
+
+    let name = matchSource[0] ? matchSource[0].name : "";
+    
     const articleItems = articles.map((element, idx) =>
       <ArticleItem
         key={idx}
         title={element.title}
         description={element.description}
         image={element.urlToImage}
+        url={element.url}
       />
     );
 
     return (
       <div className="article-item-list">
-        {/* <div className="source-item">
+         <div className="source-item">
           <img
             src={`http://logo.clearbit.com/${imageUrl}?size=202`}
             className="logo-image"
@@ -41,7 +48,7 @@ class ArticleList extends React.Component {
           <div className="source-name">
             {name}
           </div>
-        </div> */}
+        </div> 
         <div className="back-button">
           <Link to="/feed/result">Back</Link>
         </div>

@@ -33,7 +33,6 @@ class FeedPage extends React.Component {
                     component={ArticleListContainer}
                   />
                 </Switch>
-                <div className="rss-list" />
               </div>
             </div>
           </div>

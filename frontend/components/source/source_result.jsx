@@ -8,7 +8,7 @@ const masonryOptions = {
   fitWidth: true,
   stagger: 100,
   gutter: 50,
-  transitionDuration: '0.8s'
+  transitionDuration: '0.6s'
 };
 
 class SourceResult extends React.Component {

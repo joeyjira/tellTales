@@ -60,12 +60,14 @@ class ArticleList extends React.Component {
         <div className="back-button">
           <Link to="/feed/result">Back</Link>
         </div>
-        <Masonry
-          className={'article-list-masonry'}
-          elementType={'div'}
-          options={masonryOptions}>
-          {articleItems}
-        </Masonry>
+        <div className="center-masonry">
+          <Masonry
+            className={'article-list-masonry'}
+            elementType={'div'}
+            options={masonryOptions}>
+            {articleItems}
+          </Masonry>
+        </div>
       </div>
     );
   }

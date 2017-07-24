@@ -46,7 +46,9 @@ class SourceResult extends React.Component {
       <div className="search-and-return">
         <div className="page-tagline">
           <div className="animated infinite pulse">
-          <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+            <div className="center-tag-logo">
+            <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+            </div> 
           </div>
           <h1>Hello World!</h1>
         </div>

@@ -13,11 +13,6 @@ const nullCollection = {
   }
 };
 
-const joeyIsAwesome = () => {
-  return 666;
-}
-//testing vscode git
-
 const CollectionReducer = (state = nullCollection, action) => {
   Object.freeze(state);
   switch (action.type) {

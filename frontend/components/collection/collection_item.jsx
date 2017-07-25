@@ -9,18 +9,22 @@ class CollectionItem extends React.Component {
   }
 
   handleDelete() {
-    const collectionId = this.props.id
+    const collectionId = this.props.id;
     this.props.deleteCollection(collectionId);
   }
 
   render() {
     const { title } = this.props;
-    return (
-      <div className="collection-name">
-        {title}
-        <button onClick={this.handleDelete}>Delete</button>
-      </div>
-    );
+    if (title) {
+      return (
+        <div className="collection-name">
+          {title}
+          <button onClick={this.handleDelete}>Delete</button>
+        </div>
+      );
+    } else {
+      return <div />;
+    }
   }
 }
 

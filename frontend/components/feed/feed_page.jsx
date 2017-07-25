@@ -42,11 +42,13 @@ class FeedPage extends React.Component {
               <button className="guest-button" onClick={this.handleCreate}>
                 Create Collection
               </button>
-              <input
-                type="text"
-                placeholder="Collection"
-                onChange={this.update("title")}
-              />
+              <form onSubmit={this.handleCreate}>
+                <input
+                  type="text"
+                  placeholder="Collection"
+                  onChange={this.update("title")}
+                />
+              </form>
             </div>
             <CollectionContainer />
             <div className="add-content">

@@ -5,7 +5,24 @@ class CollectionItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
-    console.log("WHAT IS THIS", this.props.id);
+    this.showEdit = this.showEdit.bind(this);
+    this.state = {
+      showEdit: false,
+      input: this.props.title
+    };
+  }
+
+  update(field) {
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+  }
+
+  showEdit() {
+    this.setState({
+      showEdit: !this.state.showEdit
+    });
   }
 
   handleDelete() {
@@ -16,12 +33,29 @@ class CollectionItem extends React.Component {
   render() {
     const { title } = this.props;
     if (title) {
-      return (
-        <div className="collection-name">
-          {title}
-          <button onClick={this.handleDelete}>Delete</button>
-        </div>
-      );
+      if (this.state.showEdit) {
+        return (
+          <div className="collection-name">
+            <div onDoubleClick={this.showEdit}>
+              <input
+                type="text"
+                value={this.state.input}
+                onChange={this.update("input")}
+                onBlur={() => this.setState({ ["input"]: this.props.title })}
+              />
+            </div>
+          </div>
+        );
+      } else {
+        return (
+          <div className="collection-name">
+            <div className="name-edit" onDoubleClick={this.showEdit}>
+              {title}
+            </div>
+            <button onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+        );
+      }
     } else {
       return <div />;
     }

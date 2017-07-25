@@ -36,6 +36,12 @@ html, body, #root, .main-container, .routes-container {
   }
 }
 
+.collection-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .add-content {
   display: flex;
   justify-content: center;

@@ -48,11 +48,11 @@ class CollectionItem extends React.Component {
       if (this.state.showEdit) {
         return (
           <div className="collection-name">
-            <div onDoubleClick={this.showEdit}>
+            <div className="name-edit" onDoubleClick={this.showEdit}>
               <form onSubmit={this.handleEdit}>
                 <input
                   type="text"
-                  value={this.state.input}
+                  value={this.state.title}
                   onChange={this.update("title")}
                 />
               </form>

@@ -30,7 +30,9 @@ class FeedPage extends React.Component {
 
   handleCreate() {
     const collection = this.state;
-    this.props.createCollection({ collection });
+    this.props
+      .createCollection({ collection })
+      .then(() => this.setState({ title: "" }));
   }
 
   render() {
@@ -39,16 +41,17 @@ class FeedPage extends React.Component {
         <div className="entire-show-page">
           <div className="feedbar-container">
             <div className="collection-creator-container">
-              <button className="guest-button" onClick={this.handleCreate}>
-                Create Collection
-              </button>
-              <form onSubmit={this.handleCreate}>
+              <form onSubmit={this.handleCreate} className="collection-form">
                 <input
                   type="text"
-                  placeholder="Collection"
+                  placeholder="Create Collection"
                   onChange={this.update("title")}
+                  value={this.state.title}
                 />
               </form>
+              {/* <button className="guest-button" onClick={this.handleCreate}>
+                Create Collection
+              </button> */}
             </div>
             <CollectionContainer />
             <div className="add-content">

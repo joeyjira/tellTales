@@ -1,16 +1,15 @@
 class Api::CollectionsController < ApplicationController
    def index
         @collections = current_user.collections
-        # render "/api/collections/index"
-        render json: { collections: @collections }
+        render "/api/collections/index"
+        # render json: { collections: @collections }
     end
 
     def create
         @collection = Collection.new(collection_params)
-        @collection.user_id = current_user.id
+        @collection.user_id ||= current_user.id
         if @collection.save!
-            # render "/api/collections/show"
-            render json: @collection
+            render "api/collections/show"
         else
             render json: @collections.errors.full_messages, status: 422
         end

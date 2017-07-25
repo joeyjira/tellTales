@@ -12,7 +12,6 @@ class ArticleList extends React.Component {
       title: "",
       user_id: this.props.currentUser.id
     }
-    this.handleCreate = this.handleCreate.bind(this);
   }
 
   componentWillMount() {
@@ -24,11 +23,6 @@ class ArticleList extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
-  }
-
-  handleCreate() {
-    const collection = this.state
-    this.props.createCollection({ collection })
   }
 
   render() {
@@ -56,11 +50,6 @@ class ArticleList extends React.Component {
     );
     return (
       <div className="article-item-list">
-        <input type="text" placeholder="Collection" onChange={this.update("title")}/>
-        <button className="guest-button" onClick={this.handleCreate}>
-          Create Collection
-        </button>
-
         <div className="source-item">
           <img
             src={`http://logo.clearbit.com/${imageUrl}?size=202`}

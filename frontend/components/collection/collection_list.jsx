@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import CollectionItem from './collection_item';
+import CollectionItem from "./collection_item";
 
 class CollectionList extends React.Component {
   constructor(props) {
@@ -12,16 +12,17 @@ class CollectionList extends React.Component {
   }
 
   render() {
-    const { allCollections } = this.props;
-    const { collections } = allCollections;
-    const collectionList = collections.map((collection, idx) =>
-      <CollectionItem key={idx} title={collection.title} />
-    );
-    return (
-      <div className="collection-list">
-        {collectionList}
-      </div>
-    );
+    const { collections } = this.props;
+    console.log("ANDREW SAID LOOK AT THIS", collections)
+    
+    const collectionList = collections.map((collection) => (
+        <CollectionItem key={collection.id} title={collection.title} />)
+    )
+      return (
+        <div className="collection-list">
+          {collectionList}
+        </div>
+      );
   }
 }
 

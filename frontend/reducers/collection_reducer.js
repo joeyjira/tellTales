@@ -6,7 +6,9 @@ import {
 } from "../actions/collection_actions";
 
 const nullCollection = {
-  collections: []
+  0: {
+    title: ""
+  }
 };
 
 const CollectionReducer = (state = nullCollection, action) => {
@@ -15,7 +17,9 @@ const CollectionReducer = (state = nullCollection, action) => {
     case RECEIVE_COLLECTIONS:
       return action.collections;
     case RECEIVE_COLLECTION:
-      return merge({}, state, action.collection);
+      const newState = merge({}, state)
+      newState[action.collection.id] = action.collection;
+      return newState;
     default:
       return state;
   }

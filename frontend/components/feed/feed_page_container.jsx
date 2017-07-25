@@ -7,7 +7,8 @@ const mapStateToProps = ({ session, feedSource }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFeedSources: () => dispatch(fetchFeedSources())
+  fetchFeedSources: () => dispatch(fetchFeedSources()),
+  fetchCollections: () => dispatch(fetchCollections())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedPage);

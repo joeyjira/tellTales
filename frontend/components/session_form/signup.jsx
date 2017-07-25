@@ -23,7 +23,7 @@ class Signup extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.signup({ user }).then(() => {
-      this.props.history.push("/feed");
+      this.props.history.push("/feed/result");
     });
   }
 
@@ -40,7 +40,6 @@ class Signup extends React.Component {
   }
 
   render() {
-    console.log(this.state.username);
     return (
       <div className="signup">
         <form className="signup-form" onSubmit={this.handleSubmit}>

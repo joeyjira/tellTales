@@ -5,6 +5,7 @@ import Root from "./components/root";
 import { logout, login, signup } from "./actions/session_actions";
 import { fetchFeedSources } from "./actions/feed_source_actions";
 import { fetchArticles } from "./actions/article_actions";
+import { fetchCollections, createCollection } from "./actions/collection_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   window.fetchFeedSources = fetchFeedSources;
   window.fetchArticles = fetchArticles;
+  window.fetchCollections = fetchCollections;
+  window.createCollection = createCollection;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });

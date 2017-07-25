@@ -4,6 +4,13 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 class CollectionItem extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+    console.log("WHAT IS THIS", this.props.id);
+  }
+
+  handleDelete() {
+    const collectionId = this.props.id
+    this.props.deleteCollection(collectionId);
   }
 
   render() {
@@ -11,6 +18,7 @@ class CollectionItem extends React.Component {
     return (
       <div className="collection-name">
         {title}
+        <button onClick={this.handleDelete}>Delete</button>
       </div>
     );
   }

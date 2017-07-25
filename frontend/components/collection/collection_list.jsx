@@ -13,16 +13,20 @@ class CollectionList extends React.Component {
 
   render() {
     const { collections } = this.props;
-    console.log("ANDREW SAID LOOK AT THIS", collections)
-    
-    const collectionList = collections.map((collection) => (
-        <CollectionItem key={collection.id} title={collection.title} />)
-    )
-      return (
-        <div className="collection-list">
-          {collectionList}
-        </div>
-      );
+
+    const collectionList = collections.map(collection =>
+      <CollectionItem
+        key={collection.id}
+        title={collection.title}
+        deleteCollection={this.props.deleteCollection}
+        id={collection.id}
+      />
+    );
+    return (
+      <div className="collection-list">
+        {collectionList.length > 0 ? collectionList : ""}
+      </div>
+    );
   }
 }
 

@@ -2,12 +2,14 @@ import merge from "lodash/merge";
 
 import {
   RECEIVE_COLLECTIONS,
-  RECEIVE_COLLECTION
+  RECEIVE_COLLECTION,
+  REMOVE_COLLECTION
 } from "../actions/collection_actions";
 
 const nullCollection = {
   0: {
-    title: ""
+    title: "",
+    id: ""
   }
 };
 
@@ -20,6 +22,10 @@ const CollectionReducer = (state = nullCollection, action) => {
       const newState = merge({}, state)
       newState[action.collection.id] = action.collection;
       return newState;
+    case REMOVE_COLLECTION:
+      const nextState = merge({}, state);
+      delete nextState[action.id];
+      return nextState;
     default:
       return state;
   }

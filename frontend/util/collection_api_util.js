@@ -10,3 +10,9 @@ export const getCollections = () =>
     url: "/api/collections",
     data: collection
   });
+
+  export const deleteCollection = (id) =>
+  $.ajax({
+    method: "DELETE",
+    url: `api/collections/${id}`
+  });

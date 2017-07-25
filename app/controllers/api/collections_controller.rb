@@ -27,7 +27,6 @@ class Api::CollectionsController < ApplicationController
     def destroy
         @collection = Collection.find(params[:id])
         @collection.destroy
-        render json: @collection.errors.full_messages, status: 404
     end
 
     private

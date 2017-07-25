@@ -17,6 +17,7 @@ class Api::CollectionsController < ApplicationController
 
     def update
         @collection = current_user.collections.find(params[:id])
+        @collection.user_id ||= current_user.id
         if @collection.update_attributes(collection_params)
             render "/api/collections/show"
         else

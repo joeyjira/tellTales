@@ -34,3 +34,8 @@ export const deleteCollection = collectionId => dispatch => {
     .then(collection => dispatch(removeCollection(collectionId)))
     .then(() => dispatch(receiveCollections));
 };
+
+export const updateCollection = collection => dispatch => {
+  return APIUtil.patchCollection(collection)
+    .then(collection => dispatch(receiveCollection(collection)))
+}

@@ -16,3 +16,10 @@ export const getCollections = () =>
     method: "DELETE",
     url: `api/collections/${id}`
   });
+
+  export const patchCollection = (collection) =>
+  $.ajax({
+    method: "PATCH",
+    url: `api/collections/${collection.id}`,
+    data: collection
+  });

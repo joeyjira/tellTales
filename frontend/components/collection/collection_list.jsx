@@ -19,6 +19,7 @@ class CollectionList extends React.Component {
         key={collection.id}
         title={collection.title}
         deleteCollection={this.props.deleteCollection}
+        updateCollection={this.props.updateCollection}
         id={collection.id}
       />
     );

@@ -5,10 +5,11 @@ class CollectionItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
     this.showEdit = this.showEdit.bind(this);
     this.state = {
       showEdit: false,
-      input: this.props.title
+      title: this.props.title
     };
   }
 
@@ -25,6 +26,17 @@ class CollectionItem extends React.Component {
     });
   }
 
+  handleEdit() {
+    const collectionId = this.props.id;
+    this.props.updateCollection({
+      collection: { title: this.state.title },
+      id: collectionId
+    });
+    this.setState({
+      showEdit: false
+    })
+  }
+
   handleDelete() {
     const collectionId = this.props.id;
     this.props.deleteCollection(collectionId);
@@ -37,12 +49,13 @@ class CollectionItem extends React.Component {
         return (
           <div className="collection-name">
             <div onDoubleClick={this.showEdit}>
-              <input
-                type="text"
-                value={this.state.input}
-                onChange={this.update("input")}
-                onBlur={() => this.setState({ ["input"]: this.props.title })}
-              />
+              <form onSubmit={this.handleEdit}>
+                <input
+                  type="text"
+                  value={this.state.input}
+                  onChange={this.update("title")}
+                />
+              </form>
             </div>
           </div>
         );
@@ -52,7 +65,9 @@ class CollectionItem extends React.Component {
             <div className="name-edit" onDoubleClick={this.showEdit}>
               {title}
             </div>
-            <button onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i></button>
+            <button className="fa-delete" onClick={this.handleDelete}>
+              <i className="fa fa-times" aria-hidden="true" />
+            </button>
           </div>
         );
       }

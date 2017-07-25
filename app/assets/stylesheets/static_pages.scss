@@ -78,7 +78,23 @@ body,
 }
 
 .name-edit {
+  display: flex;
+  align-items: center;
   margin-left: 10%;
+  height: 100%;
+  form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    input {
+      height: 88%;
+      border: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: rgb(150, 150, 150);
+      padding-left: 5px;
+    }
+  }
 }
 .fa-delete {
   background-color: rgb(30, 38, 47);

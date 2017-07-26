@@ -2,7 +2,6 @@ class Api::CollectionsController < ApplicationController
    def index
         @collections = current_user.collections
         render "/api/collections/index"
-        # render json: { collections: @collections }
     end
 
     def create

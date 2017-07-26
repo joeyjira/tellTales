@@ -1,3 +1,111 @@
 // Place all the styles related to the collections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feedbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  min-width: 250px;
+  background-color: rgb(30, 38, 47);
+}
+
+.collection-creator-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.collection-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 60%;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+    margin-right: 5%;
+    border: none;
+  }
+  button {
+    width: 75%;
+    margin-top: 10px;
+  }
+}
+
+.fa-plus {
+  color: rgb(93, 169, 255);
+}
+
+.collection-list {
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  width: 100%;
+  margin-top: 10%;
+  align-items: center;
+}
+
+.collection-name {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(210, 210, 210);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.collection-name:hover {
+  background-color: rgb(48, 57, 68);
+  cursor: pointer;
+}
+
+.name-edit {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  height: 100%;
+  form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    input {
+      height: 88%;
+      border: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      color: rgb(150, 150, 150);
+      padding-left: 5px;
+    }
+  }
+}
+.fa-delete {
+  background-color: rgb(30, 38, 47);
+  border: none;
+  margin-right: 10%;
+}
+
+.fa-delete:hover {
+  cursor: pointer;
+}
+
+.fa-delete {
+  background-color: rgb(30, 38, 47);
+  color: rgb(85, 105, 127);
+}
+
+.add-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(93, 169, 255);
+  height: 60px;
+}

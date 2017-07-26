@@ -34,7 +34,7 @@ class CollectionItem extends React.Component {
     });
     this.setState({
       showEdit: false
-    })
+    });
   }
 
   handleDelete() {
@@ -63,6 +63,8 @@ class CollectionItem extends React.Component {
         return (
           <div className="collection-name">
             <div className="name-edit" onDoubleClick={this.showEdit}>
+              <i className="fa fa-chevron-right" aria-hidden="true" />
+              &nbsp;&nbsp;
               {title}
             </div>
             <button className="fa-delete" onClick={this.handleDelete}>

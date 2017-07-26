@@ -11,7 +11,7 @@ class ArticleList extends React.Component {
     this.state = {
       title: "",
       user_id: this.props.currentUser.id
-    }
+    };
   }
 
   componentWillMount() {
@@ -50,17 +50,25 @@ class ArticleList extends React.Component {
     );
     return (
       <div className="article-item-list">
-        <div className="source-item">
-          <img
-            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
-            className="logo-image"
-          />
-          <div className="source-name">
+        <div className="article-logo-container">
+          {/* <div className="article-logo">
+            <img
+              src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+              className="article-image"
+            />
+          </div>  */}
+          <div className="article-source-name">
             {name}
           </div>
         </div>
         <div className="back-button">
-          <Link to="/feed/result">Back</Link>
+          <Link to="/feed/result">
+            <div className="animated infinite pulse">
+              <div className="hello-logo">
+                <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+              </div>
+            </div>
+          </Link>
         </div>
         {articleItems}
       </div>

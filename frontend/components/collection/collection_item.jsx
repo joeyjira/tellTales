@@ -45,20 +45,28 @@ class CollectionItem extends React.Component {
 
   render() {
     const { title } = this.props;
-    
+
     if (title) {
       if (this.state.showEdit) {
         return (
-          <div className="collection-name">
-            <div className="name-edit" onDoubleClick={this.showEdit}>
-              <form onSubmit={this.handleEdit}>
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update("title")}
-                  autoFocus="autofocus"
-                />
-              </form>
+          <div className="collection-item">
+            <div className="collection-name">
+              <div className="name-edit" onDoubleClick={this.showEdit}>
+                <form onSubmit={this.handleEdit}>
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update("title")}
+                    autoFocus="autofocus"
+                  />
+                </form>
+              </div>
+            </div>
+            <div className="collection-source">
+              <CollectionSourceContainer
+                collectionId={this.props.id}
+                sources={this.props.sources}
+              />
             </div>
           </div>
         );
@@ -72,7 +80,7 @@ class CollectionItem extends React.Component {
                 {title}
               </div>
               <button className="fa-delete" onClick={this.handleDelete}>
-                <i className="fa fa-trash" aria-hidden="true"></i>
+                <i className="fa fa-trash" aria-hidden="true" />
               </button>
             </div>
             <div className="collection-source">

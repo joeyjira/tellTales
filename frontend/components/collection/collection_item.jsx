@@ -22,13 +22,6 @@ class CollectionItem extends React.Component {
       });
   }
 
-  toggleHide() {
-    console.log(this.state.hideSource);
-    this.setState({
-      ["hideSource"]: !this.state.hideSource
-    });
-  }
-
   showEdit() {
     this.setState({
       showEdit: !this.state.showEdit
@@ -47,7 +40,7 @@ class CollectionItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteCollection(collectionId);
+    this.props.deleteCollection(this.props.id);
   }
 
   render() {

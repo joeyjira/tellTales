@@ -27,8 +27,6 @@ const CollectionReducer = (state = nullCollection, action) => {
     case REMOVE_COLLECTION:
       delete newState[action.id];
       return newState;
-    case REMOVE_SOURCE:
-      delete newState[action.collection.id].sources
     default:
       return state;
   }

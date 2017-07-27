@@ -8,14 +8,19 @@ class CollectionSourceList extends React.Component {
   }
 
   render() {
-    const { sources } = this.props;
+    const { sources, deleteSource } = this.props;
     const sourceList = sources.map(source =>
-      <CollectionSourceItem key={source.id} sourceId={source.source_id} />
+      <CollectionSourceItem
+        key={source.id}
+        sourceId={source.source_id}
+        deleteSource={deleteSource}
+        id={source.id}
+      />
     );
 
     return (
       <div className="collection-source-list">
-         {sourceList} 
+        {sourceList}
       </div>
     );
   }

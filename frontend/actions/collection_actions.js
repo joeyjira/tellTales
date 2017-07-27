@@ -57,7 +57,7 @@ export const createSource = (collectionId, source) => dispatch =>
     dispatch(receiveCollection(collection))
   );
 
-export const deleteSource = (collectionId, source) => dispatch => {
-  return APIUtil.deleteSource(collectionId, source)
-    .then(() => dispatch(receiveCollection));
+export const deleteSource = (sourceId) => dispatch => {
+  return APIUtil.deleteSource(sourceId)
+    .then((collection) => dispatch(receiveCollection(collection)));
 };

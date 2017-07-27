@@ -12,7 +12,7 @@ class Api::SourcesController < ApplicationController
     def destroy
         @source = Source.find(params[:id])
         @source.destroy
-        @collection = source.collection
+        @collection = @source.collection
         render "api/collections/show"
     end
 

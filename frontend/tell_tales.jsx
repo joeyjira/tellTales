@@ -8,7 +8,8 @@ import { fetchArticles } from "./actions/article_actions";
 import {
   fetchCollections,
   createCollection,
-  createSource
+  createSource,
+  deleteSource
 } from "./actions/collection_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchCollections = fetchCollections;
   window.createCollection = createCollection;
   window.createSource = createSource;
+  window.deleteSource = deleteSource;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });

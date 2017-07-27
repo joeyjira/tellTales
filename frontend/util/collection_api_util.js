@@ -31,9 +31,8 @@ export const postSource = (collectionId, source) =>
     data: { source: {source_id: source} }
   });
 
-export const deleteSource = (collectionId, source) =>
+export const deleteSource = (sourceId) =>
   $.ajax({
     method: "DELETE",
-    url: `/api/collections/${id}/sources/${source.id}`,
-    data: source
+    url: `/api/sources/${sourceId}`,
   });

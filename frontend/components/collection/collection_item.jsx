@@ -56,6 +56,7 @@ class CollectionItem extends React.Component {
                   type="text"
                   value={this.state.title}
                   onChange={this.update("title")}
+                  autoFocus="autofocus"
                 />
               </form>
             </div>
@@ -71,7 +72,7 @@ class CollectionItem extends React.Component {
                 {title}
               </div>
               <button className="fa-delete" onClick={this.handleDelete}>
-                <i className="fa fa-bomb" aria-hidden="true"></i>
+                <i className="fa fa-trash" aria-hidden="true"></i>
               </button>
             </div>
             <div className="collection-source">

@@ -15,7 +15,15 @@ class ArticleList extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchArticles(this.id).then(this.props.fetchFeedSources());
+    this.props.fetchArticles(this.id);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.sourceId !== nextProps.match.params.sourceId) {
+      this.props
+        .fetchArticles(nextProps.match.params.sourceId)
+        .then(this.props.fetchFeedSources());
+    }
   }
 
   update(field) {
@@ -25,10 +33,13 @@ class ArticleList extends React.Component {
       });
   }
 
+  handleAddSource() {}
+
   render() {
-    const { article, feedSources } = this.props;
+    const { article, feedSources, collections } = this.props;
     const { articles, source } = article;
     const { sources } = feedSources;
+    console.log("LOOK HERE", collections);
 
     const matchSource = sources.filter(source => source.id === article.source);
     let url = matchSource[0] ? matchSource[0].url : "";
@@ -39,15 +50,22 @@ class ArticleList extends React.Component {
 
     let name = matchSource[0] ? matchSource[0].name : "";
 
-    const articleItems = articles.map((element, idx) =>
+    const articleItems = articles.map((article, idx) =>
       <ArticleItem
         key={idx}
-        title={element.title}
-        description={element.description}
-        image={element.urlToImage}
-        url={element.url}
+        title={article.title}
+        description={article.description}
+        image={article.urlToImage}
+        url={article.url}
       />
     );
+
+    const collectionButtons = collections.map(collection =>
+      <button key={collection.id} onClick={this.handleClick}>
+        {collection.title}
+      </button>
+    );
+
     return (
       <div className="article-item-list">
         <div className="article-logo-container">
@@ -59,6 +77,14 @@ class ArticleList extends React.Component {
           </div>  */}
           <div className="article-source-name">
             {name}
+          </div>
+          <div className="source-follow-container">
+            <div className="dropdown">
+              <div className="add-to-collection">ADD TO COLLECTION</div>
+              <div className="dropdown-content">
+                {collectionButtons}
+              </div>
+            </div>
           </div>
         </div>
         <div className="back-button">

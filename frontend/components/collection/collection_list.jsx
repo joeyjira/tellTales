@@ -13,7 +13,6 @@ class CollectionList extends React.Component {
 
   render() {
     const { collections } = this.props;
-
     const collectionList = collections.map(collection =>
       <CollectionItem
         key={collection.id}
@@ -21,6 +20,7 @@ class CollectionList extends React.Component {
         deleteCollection={this.props.deleteCollection}
         updateCollection={this.props.updateCollection}
         id={collection.id}
+        sources={collection.sources}
       />
     );
     return (

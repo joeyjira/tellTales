@@ -12,7 +12,9 @@ Source.destroy_all
 
 guest = User.create(username: "GuestUser", password: "password123")
 
-guest_collection1 = Collection.create(title: "Sports", user_id: 1)
-guest_collection2 = Collection.create(title: "General", user_id: 1)
+guest_collection1 = Collection.create(title: "Sports", user_id: guest.id)
+guest_collection2 = Collection.create(title: "General", user_id: guest.id)
 
-source1 = Source.create(collection_id: 1, source_id: "abc-news")
+source1 = Source.create(collection_id: guest_collection1.id, source_id: "al-jazeera-english")
+source2 = Source.create(collection_id: guest_collection1.id, source_id: "bbc-sport")
+source3 = Source.create(collection_id: guest_collection2.id, source_id: "business-insider")

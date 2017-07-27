@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import CollectionSourceContainer from "../collection_source/collection_source_container";
 
 class CollectionItem extends React.Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class CollectionItem extends React.Component {
 
   render() {
     const { title } = this.props;
+    
     if (title) {
       if (this.state.showEdit) {
         return (
@@ -61,15 +63,23 @@ class CollectionItem extends React.Component {
         );
       } else {
         return (
-          <div className="collection-name">
-            <div className="name-edit" onDoubleClick={this.showEdit}>
-              <i className="fa fa-chevron-right" aria-hidden="true" />
-              &nbsp;&nbsp;
-              {title}
+          <div>
+            <div className="collection-name">
+              <div className="name-edit" onDoubleClick={this.showEdit}>
+                <i className="fa fa-chevron-right" aria-hidden="true" />
+                &nbsp;&nbsp;
+                {title}
+              </div>
+              <button className="fa-delete" onClick={this.handleDelete}>
+                <i className="fa fa-times" aria-hidden="true" />
+              </button>
             </div>
-            <button className="fa-delete" onClick={this.handleDelete}>
-              <i className="fa fa-times" aria-hidden="true" />
-            </button>
+            <div className="collection-source">
+              <CollectionSourceContainer
+                collectionId={this.props.id}
+                sources={this.props.sources}
+              />
+            </div>
           </div>
         );
       }

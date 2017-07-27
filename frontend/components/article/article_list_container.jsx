@@ -1,15 +1,19 @@
 import { connect } from "react-redux";
-import ArticleList from "./article_list";
+import values from "lodash/values";
 
-const mapStateToProps = ({ session, articles, feedSource }) => ({
+import ArticleList from "./article_list";
+import { fetchCollections } from "../../actions/collection_actions";
+
+const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
   currentUser: session.currentUser,
   article: articles,
-  feedSources: feedSource
+  feedSources: feedSource,
+  collections: values(collections)
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchArticles: source => dispatch(fetchArticles(source)),
-  fetchFeedSources: () => dispatch(fetchFeedSources())
+  fetchCollections: () => dispatch(fetchCollections()),
+  fetchArticles: source => dispatch(fetchArticles(source))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

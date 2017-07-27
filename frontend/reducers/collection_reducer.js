@@ -9,7 +9,8 @@ import {
 const nullCollection = {
   0: {
     title: "",
-    id: ""
+    id: "",
+    sources: []
   }
 };
 

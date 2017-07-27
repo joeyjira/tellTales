@@ -15,8 +15,8 @@ class CollectionSourceItem extends React.Component {
   render() {
     return (
       <div>
-        <button className="delete-source-button" onClick={this.handleDelete}>
-          Delete
+        <button className="fa-delete" onClick={this.handleDelete}>
+          <i className="fa fa-times" aria-hidden="true" />
         </button>
         <Link to={`/feed/source/${this.props.sourceId}`}>
           {this.props.sourceId}

@@ -71,7 +71,7 @@ class CollectionItem extends React.Component {
                 {title}
               </div>
               <button className="fa-delete" onClick={this.handleDelete}>
-                <i className="fa fa-times" aria-hidden="true" />
+                <i className="fa fa-bomb" aria-hidden="true"></i>
               </button>
             </div>
             <div className="collection-source">

@@ -10,7 +10,9 @@ class Greeting extends React.Component {
     const { logout, currentUser } = this.props;
     return (
       <div className="header-container">
-        <h1>tellTales</h1>
+        <Link to="/feed/result" className="header-link">
+          <h1>tellTales</h1>
+        </Link>
         <div className="greeting-container">
           <button className="logout-button" onClick={logout}>
             Log Out

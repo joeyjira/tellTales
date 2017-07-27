@@ -33,7 +33,8 @@ class ArticleList extends React.Component {
   }
 
   handleClick(collectionId) {
-    return (e) => this.props.createSource(collectionId, this.props.match.params.sourceId)
+    return e =>
+      this.props.createSource(collectionId, this.props.match.params.sourceId);
   }
 
   render() {
@@ -61,10 +62,7 @@ class ArticleList extends React.Component {
     );
 
     const collectionButtons = collections.map(collection =>
-      <button
-        key={collection.id}
-        onClick={this.handleClick(collection.id)}
-      >
+      <button key={collection.id} onClick={this.handleClick(collection.id)}>
         {collection.title}
       </button>
     );
@@ -72,6 +70,15 @@ class ArticleList extends React.Component {
     return (
       <div className="article-item-list">
         <div className="article-logo-container">
+          <div className="back-button">
+            <Link to="/feed/result" className="back-button-link">
+              <div className="animated infinite pulse">
+                <div className="hello-logo">
+                  <i className="fa fa-angle-left fa-4x" aria-hidden="true"></i>
+                </div>
+              </div>
+            </Link>
+          </div>
           {/* <div className="article-logo">
             <img
               src={`http://logo.clearbit.com/${imageUrl}?size=202`}
@@ -91,15 +98,6 @@ class ArticleList extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-        <div className="back-button">
-          <Link to="/feed/result">
-            <div className="animated infinite pulse">
-              <div className="hello-logo">
-                <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
-              </div>
-            </div>
-          </Link>
         </div>
         {articleItems}
       </div>

@@ -48,16 +48,16 @@ class FeedPage extends React.Component {
                   onChange={this.update("title")}
                   value={this.state.title}
                 />
-                <i className="fa fa-plus" aria-hidden="true"></i>
+                <i className="fa fa-plus" aria-hidden="true" />
               </form>
               {/* <button className="guest-button" onClick={this.handleCreate}>
                 Create Collection
               </button> */}
             </div>
             <CollectionContainer />
-            <div className="add-content">
-              <Link to="/feed/result">Add Content</Link>
-            </div>
+            <Link to="/feed/result" className="add-content-link">
+              <div className="add-content">Add Content</div>
+            </Link>
           </div>
           <div className="main-feed">
             <GreetingContainer />

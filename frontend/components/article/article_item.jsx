@@ -46,7 +46,7 @@ class ArticleItem extends React.Component {
             onRequestClose={this.closeModal}
             contentLabel="article-view"
             className="article-modal">  
-            <iframe className="iframe" src={url}/>
+            <iframe className="iframe" src={url} sandbox="allow-same-origin"/>
           </Modal>   
         </div>
     );

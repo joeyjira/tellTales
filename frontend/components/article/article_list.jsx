@@ -74,18 +74,18 @@ class ArticleList extends React.Component {
             <Link to="/feed/result" className="back-button-link">
               <div className="animated infinite pulse">
                 <div className="hello-logo">
-                  <i className="fa fa-angle-left fa-4x" aria-hidden="true"></i>
+                  <i className="fa fa-angle-left fa-4x" aria-hidden="true" />
                 </div>
               </div>
             </Link>
           </div>
-          {/* <div className="article-logo">
-            <img
-              src={`http://logo.clearbit.com/${imageUrl}?size=202`}
-              className="article-image"
-            />
-          </div>  */}
           <div className="article-source-name">
+            <div className="article-logo">
+              <img
+                src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+                className="article-logo-image"
+              />
+            </div>
             {name}
           </div>
           <div className="source-follow-container">

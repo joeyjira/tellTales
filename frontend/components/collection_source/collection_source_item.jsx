@@ -13,13 +13,29 @@ class CollectionSourceItem extends React.Component {
   }
 
   render() {
+    console.log("check this out", this.props);
+    const { feed, sourceId } = this.props;
+    const { sources } = feed;
+
+    const matchSource = sources.filter(source => source.id === sourceId);
+    let url = matchSource[0] ? matchSource[0].url : "";
+    let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
+    if (imageUrl === "http://espn.go.com") {
+      imageUrl = "http://espn.com";
+    }
+
+    let name = matchSource[0] ? matchSource[0].name : "";
     return (
-      <div>
-        <button className="fa-delete" onClick={this.handleDelete}>
+      <div className="collection-source-options">
+        <button className="fa-delete-source" onClick={this.handleDelete}>
           <i className="fa fa-times" aria-hidden="true" />
         </button>
         <Link to={`/feed/source/${this.props.sourceId}`}>
-          {this.props.sourceId}
+          <img
+            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+            className="source-icon-image"
+          />
+          <p>{name}</p>
         </Link>
       </div>
     );

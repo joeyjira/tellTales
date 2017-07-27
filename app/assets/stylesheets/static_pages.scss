@@ -192,9 +192,15 @@ body,
   cursor: pointer;
 }
 
+.article-logo-image {
+  height: auto;
+  width: 100px;
+}
+
 .article-image {
   height: auto;
   width: 400px;
+  margin-right: 10%;
 }
 
 .article-info {
@@ -210,11 +216,13 @@ body,
     font-size: 22px;
     line-height: 25px;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
   }
   
   p {
     margin-top: 15px;
-    color: rgb(86, 86, 86)
+    color: rgb(86, 86, 86);
+    font-family: 'Open Sans', sans-serif;
   }
 }
 

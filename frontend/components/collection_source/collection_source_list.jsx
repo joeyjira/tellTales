@@ -8,13 +8,14 @@ class CollectionSourceList extends React.Component {
   }
 
   render() {
-    const { sources, deleteSource } = this.props;
+    const { sources, deleteSource, feedSource } = this.props;
     const sourceList = sources.map(source =>
       <CollectionSourceItem
         key={source.id}
         sourceId={source.source_id}
         deleteSource={deleteSource}
         id={source.id}
+        feed={feedSource}
       />
     );
 

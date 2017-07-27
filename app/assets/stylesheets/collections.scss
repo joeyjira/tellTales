@@ -92,6 +92,7 @@
   background-color: rgb(30, 38, 47);
   border: none;
   margin-right: 10%;
+  color: rgb(85, 105, 127);
 }
 
 .fa-delete:hover {
@@ -99,8 +100,7 @@
 }
 
 .fa-delete {
-  background-color: rgb(30, 38, 47);
-  color: rgb(85, 105, 127);
+ 
 }
 
 .add-content {
@@ -119,17 +119,43 @@
   width: 100%;
 }
 
-.collection-source-list-hide {
-  display: none;
-}
-
 .collection-source-list{
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
   a {
     text-decoration: none;
     color: rgb(150, 150, 150);
   }
 }
 
+.source-icon-image {
+  height: auto;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.collection-source-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+}
+
+.fa-delete-source {
+  background-color: rgb(30, 38, 47);
+  border: none;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: rgb(85, 105, 127);
+}

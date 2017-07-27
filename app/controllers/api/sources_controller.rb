@@ -19,6 +19,8 @@ class Api::SourcesController < ApplicationController
     private
 
     def source_params
-        params.require(:source).permit(:collection_id, :source_id)
+        values = params.require(:source).permit(:collection_id, :source_id)
+        values[:collection_id] ||= params[:collection_id]
+        values
     end
 end

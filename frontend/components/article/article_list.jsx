@@ -32,8 +32,8 @@ class ArticleList extends React.Component {
       });
   }
 
-  handleClick(collectionId, source) {
-    this.props.createSource(collectionId, source);
+  handleClick(collectionId) {
+    return (e) => this.props.createSource(collectionId, this.props.match.params.sourceId)
   }
 
   render() {
@@ -63,10 +63,7 @@ class ArticleList extends React.Component {
     const collectionButtons = collections.map(collection =>
       <button
         key={collection.id}
-        onClick={(collection, source) =>
-          this.handleClick(collection.id, {
-            source: { collection_id: collection.id, source_id: this.id }
-          })}
+        onClick={this.handleClick(collection.id)}
       >
         {collection.title}
       </button>

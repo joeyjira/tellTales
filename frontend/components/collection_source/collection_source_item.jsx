@@ -13,7 +13,6 @@ class CollectionSourceItem extends React.Component {
   }
 
   render() {
-    console.log("check this out", this.props);
     const { feed, sourceId } = this.props;
     const { sources } = feed;
 

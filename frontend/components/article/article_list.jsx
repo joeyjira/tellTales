@@ -41,6 +41,9 @@ class ArticleList extends React.Component {
     const { article, feedSources, collections } = this.props;
     const { articles, source } = article;
     const { sources } = feedSources;
+    // const todayDate = articles[0].publishedAt
+
+    console.log("whats the date", articles[0]);
 
     const matchSource = sources.filter(source => source.id === article.source);
     let url = matchSource[0] ? matchSource[0].url : "";
@@ -58,6 +61,8 @@ class ArticleList extends React.Component {
         description={article.description}
         image={article.urlToImage}
         url={article.url}
+        published={article.publishedAt}
+        author={article.author}
       />
     );
 
@@ -86,7 +91,9 @@ class ArticleList extends React.Component {
                 className="article-logo-image"
               />
             </div>
-            {name}
+            <p>
+              {" "}{name}{" "}
+            </p>
           </div>
           <div className="source-follow-container">
             <div className="dropdown">

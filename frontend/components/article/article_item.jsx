@@ -27,13 +27,14 @@ class ArticleItem extends React.Component {
   }
 
   render() {
-    const { title, description, image, url } = this.props;
+    const { title, description, image, url, author } = this.props;
     return (
         <div className="article-item" onClick={this.openModal}>
           <div className="article-image-frame">
             <img src={image} className="article-image" />
           </div>
           <div className="article-info">
+            <p className="author-string">{author}</p>
             <h2>
               {title}
             </h2>

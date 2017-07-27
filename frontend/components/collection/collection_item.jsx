@@ -73,8 +73,8 @@ class CollectionItem extends React.Component {
           <div className="collection-item">
             <div className="collection-name">
               <div className="name-edit" onDoubleClick={this.showEdit}>
-                <i className="fa fa-chevron-right" aria-hidden="true" />
-                &nbsp;&nbsp;
+                {/* <i className="fa fa-chevron-right" aria-hidden="true" />
+                &nbsp;&nbsp; */}
                 {title}
               </div>
               <button className="fa-delete" onClick={this.handleDelete}>

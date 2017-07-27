@@ -123,6 +123,9 @@
 }
 
 .collection-source-list{
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
   a {
     text-decoration: none;
     color: rgb(150, 150, 150);

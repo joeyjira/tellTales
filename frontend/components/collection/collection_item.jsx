@@ -49,7 +49,7 @@ class CollectionItem extends React.Component {
     if (title) {
       if (this.state.showEdit) {
         return (
-          <div className="collection-name" onClick={this.toggleHide}>
+          <div className="collection-name">
             <div className="name-edit" onDoubleClick={this.showEdit}>
               <form onSubmit={this.handleEdit}>
                 <input

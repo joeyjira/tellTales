@@ -14,7 +14,7 @@ class CollectionSourceList extends React.Component {
     );
 
     return (
-      <div className="collection-list">
+      <div className="collection-source-list">
          {sourceList} 
       </div>
     );

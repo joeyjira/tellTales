@@ -1,7 +1,7 @@
 class Api::CollectionsController < ApplicationController
    def index
         @collections = current_user.collections
-        render "/api/collections/index"
+        render "api/collections/index"
     end
 
     def create

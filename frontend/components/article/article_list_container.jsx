@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import values from "lodash/values";
 
 import ArticleList from "./article_list";
-import { fetchCollections } from "../../actions/collection_actions";
+import {
+  fetchCollections,
+  createSource
+} from "../../actions/collection_actions";
 
 const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
   currentUser: session.currentUser,
@@ -13,7 +16,8 @@ const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCollections: () => dispatch(fetchCollections()),
-  fetchArticles: source => dispatch(fetchArticles(source))
+  fetchArticles: source => dispatch(fetchArticles(source)),
+  createSource: (collectionId, source) => dispatch(createSource(collectionId, source))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

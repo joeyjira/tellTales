@@ -10,7 +10,8 @@ class CollectionItem extends React.Component {
     this.showEdit = this.showEdit.bind(this);
     this.state = {
       showEdit: false,
-      title: this.props.title
+      title: this.props.title,
+      hideSource: true
     };
   }
 
@@ -19,6 +20,13 @@ class CollectionItem extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
+  }
+
+  toggleHide() {
+    console.log(this.state.hideSource);
+    this.setState({
+      ["hideSource"]: !this.state.hideSource
+    });
   }
 
   showEdit() {
@@ -39,7 +47,6 @@ class CollectionItem extends React.Component {
   }
 
   handleDelete() {
-    const collectionId = this.props.id;
     this.props.deleteCollection(collectionId);
   }
 
@@ -49,7 +56,7 @@ class CollectionItem extends React.Component {
     if (title) {
       if (this.state.showEdit) {
         return (
-          <div className="collection-name">
+          <div className="collection-name" onClick={this.toggleHide}>
             <div className="name-edit" onDoubleClick={this.showEdit}>
               <form onSubmit={this.handleEdit}>
                 <input
@@ -63,7 +70,7 @@ class CollectionItem extends React.Component {
         );
       } else {
         return (
-          <div>
+          <div className="collection-item">
             <div className="collection-name">
               <div className="name-edit" onDoubleClick={this.showEdit}>
                 <i className="fa fa-chevron-right" aria-hidden="true" />

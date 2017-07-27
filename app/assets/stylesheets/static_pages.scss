@@ -149,9 +149,10 @@ body,
 
 .article-logo-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -304,6 +305,7 @@ body,
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .dropdown-content {
@@ -318,4 +320,25 @@ body,
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.collection-add-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+.source-follow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(93, 169, 255);
 }

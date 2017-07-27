@@ -4,22 +4,36 @@ export const getCollections = () =>
     url: "/api/collections"
   });
 
-  export const postCollection = collection =>
+export const postCollection = collection =>
   $.ajax({
     method: "POST",
     url: "/api/collections",
     data: collection
   });
 
-  export const deleteCollection = (id) =>
+export const deleteCollection = id =>
   $.ajax({
     method: "DELETE",
     url: `api/collections/${id}`
   });
 
-  export const patchCollection = (collection) =>
+export const patchCollection = collection =>
   $.ajax({
     method: "PATCH",
     url: `api/collections/${collection.id}`,
     data: collection
+  });
+
+export const postSource = (collectionId, source) =>
+  $.ajax({
+    method: "POST",
+    url: `/api/collections/${collectionId}/sources`,
+    data: source
+  });
+
+export const deleteSource = (collectionId, source) =>
+  $.ajax({
+    method: "DELETE",
+    url: `/api/collections/${id}/sources/${source.id}`,
+    data: source
   });

@@ -113,3 +113,18 @@
 .collection-source {
   color: white;
 }
+
+.collection-item {
+  width: 100%;
+}
+
+.collection-source-list-hide {
+  display: none;
+}
+
+.collection-source-list{
+  a {
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+  }
+}

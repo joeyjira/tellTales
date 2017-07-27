@@ -1,20 +1,19 @@
 class Api::SourcesController < ApplicationController
-    def index
-        @sources = Collection.find(params[:collection_id]).sources
-        render "/api/sources/index"
-    end
-
     def create
         @source = Source.new(source_params)
-
-        if @source.save!
-            render "/api/sources/show"
+        if @source.save
+            @collection = @source.collection
+            render "api/collections/show"
         else
             render json: @source.errors.full_messages, status: 422
         end 
     end
 
     def destroy
+        @source = Source.find(params[:id])
+        @source.destroy
+        @collection = source.collection
+        render "api/collections/show"
     end
 
     private

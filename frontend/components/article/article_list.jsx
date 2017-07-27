@@ -12,6 +12,7 @@ class ArticleList extends React.Component {
       title: "",
       user_id: this.props.currentUser.id
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -20,9 +21,7 @@ class ArticleList extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.sourceId !== nextProps.match.params.sourceId) {
-      this.props
-        .fetchArticles(nextProps.match.params.sourceId)
-        .then(this.props.fetchFeedSources());
+      this.props.fetchArticles(nextProps.match.params.sourceId);
     }
   }
 
@@ -33,13 +32,14 @@ class ArticleList extends React.Component {
       });
   }
 
-  handleAddSource() {}
+  handleClick(collectionId, source) {
+    this.props.createSource(collectionId, source);
+  }
 
   render() {
     const { article, feedSources, collections } = this.props;
     const { articles, source } = article;
     const { sources } = feedSources;
-    console.log("LOOK HERE", collections);
 
     const matchSource = sources.filter(source => source.id === article.source);
     let url = matchSource[0] ? matchSource[0].url : "";
@@ -61,7 +61,13 @@ class ArticleList extends React.Component {
     );
 
     const collectionButtons = collections.map(collection =>
-      <button key={collection.id} onClick={this.handleClick}>
+      <button
+        key={collection.id}
+        onClick={(collection, source) =>
+          this.handleClick(collection.id, {
+            source: { collection_id: collection.id, source_id: this.id }
+          })}
+      >
         {collection.title}
       </button>
     );
@@ -82,7 +88,9 @@ class ArticleList extends React.Component {
             <div className="dropdown">
               <div className="add-to-collection">ADD TO COLLECTION</div>
               <div className="dropdown-content">
-                {collectionButtons}
+                <div className="collection-add-container">
+                  {collectionButtons}
+                </div>
               </div>
             </div>
           </div>

@@ -4,14 +4,12 @@ import SessionReducer from "./session_reducer";
 import FeedSourceReducer from "./feed_source_reducer";
 import ArticleReducer from "./article_reducer";
 import CollectionReducer from "./collection_reducer";
-import SourceReducer from "./source_reducer";
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   feedSource: FeedSourceReducer,
   articles: ArticleReducer,
   collections: CollectionReducer,
-  sources: SourceReducer
 });
 
 export default RootReducer;

@@ -43,7 +43,6 @@ class ArticleList extends React.Component {
     const { sources } = feedSources;
     // const todayDate = articles[0].publishedAt
 
-    console.log("whats the date", articles[0]);
 
     const matchSource = sources.filter(source => source.id === article.source);
     let url = matchSource[0] ? matchSource[0].url : "";

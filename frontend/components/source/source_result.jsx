@@ -21,7 +21,34 @@ class SourceResult extends React.Component {
   render() {
     const { feedSources } = this.props;
     const { sources } = feedSources;
-    const filteredSources = sources.filter(
+    const iframeSources = sources.filter(
+      source => 
+      source.name !== "ABC News (AU)" &&
+      source.name !== "Ars Technica" &&
+      source.name !== "Bloomberg" &&
+      source.name !== "CNN" &&
+      source.name !== "Engadget" &&
+      source.name !== "Financial Times" &&
+      source.name !== "FourFourTwo" &&
+      source.name !== "Hacker News" && 
+      source.name !== "IGN" &&   
+      source.name !== "Independent" &&  
+      source.name !== "MTV News (UK)" &&
+      source.name !== "National Geographic" &&
+      source.name !== "Polygon" &&
+      source.name !== "Recode" && 
+      source.name !== "Reddit /r/all" &&  
+      source.name !== "The Guardian (AU)" &&  
+      source.name !== "The Guardian (UK)" && 
+      source.name !== "The Hindu" &&  
+      source.name !== "The New York Times" &&
+      source.name !== "The Next Web" &&  
+      source.name !== "The Telegraph" &&
+      source.name !== "The Verge" &&
+      source.name !== "Wired.de"
+         
+    );
+    const filteredSources = iframeSources.filter(
       source =>
         source.category
           .toLowerCase()
@@ -62,7 +89,6 @@ class SourceResult extends React.Component {
           <datalist id="categories">
             <option value="Business"></option>
             <option value="Entertainment"></option>
-            <option value="Gaming"></option>
             <option value="General"></option>
             <option value="Music"></option>
             <option value="Politics"></option>

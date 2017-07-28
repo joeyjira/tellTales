@@ -12,7 +12,7 @@ This web app uses Ruby on Rails, React, Redux, and Javascript.
 ### Home page:
 <img src="http://res.cloudinary.com/llventioll/image/upload/v1501274278/Screen_Shot_2017-07-28_at_1.37.16_PM_coxrfz.png" width="800px">
 
-The entire app uses a minimalistic interface consisting of a side navigation bar, a top navigation bar, and the main content. The main features of the app are **Hello World**, **Collections**, and **Feeds**
+The app uses a minimalistic design approach consisting of a side navigation bar and the main content. The main features of the app are **Hello World**, **Collections**, and **Articles**
 
 ### Hello World
 

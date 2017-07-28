@@ -28,7 +28,8 @@ class FeedPage extends React.Component {
       });
   }
 
-  handleCreate() {
+  handleCreate(e) {
+    e.preventDefault();
     const collection = this.state;
     this.props
       .createCollection({ collection })

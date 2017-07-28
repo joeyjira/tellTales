@@ -48,7 +48,7 @@ class FeedPage extends React.Component {
                   onChange={this.update("title")}
                   value={this.state.title}
                 />
-                <i className="fa fa-plus" aria-hidden="true" />
+                <i className="fa fa-plus" aria-hidden="true" onClick={this.handleCreate} />
               </form>
               {/* <button className="guest-button" onClick={this.handleCreate}>
                 Create Collection

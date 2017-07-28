@@ -41,6 +41,10 @@
   color: rgb(93, 169, 255);
 }
 
+.fa-plus:hover{
+  cursor: pointer;
+}
+
 .collection-list {
   display: flex;
   flex-direction: column;
@@ -170,3 +174,4 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
+

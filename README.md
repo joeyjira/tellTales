@@ -37,7 +37,7 @@ Feed source can be saved in collection by hovering over the button and then clic
 The icons next to each source took a bit of work as demonstrated by the code below. The images for the original api was deprecated so the url had to be extracted in the correct format using regular expressions and passed on to another another API call.
 
 ```javascript
-# frontend/components/.jsx
+# frontend/components/collection_source/collection_source_item.jsx
  const matchSource = sources.filter(source => source.id === sourceId);
     let url = matchSource[0] ? matchSource[0].url : "";
     let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";

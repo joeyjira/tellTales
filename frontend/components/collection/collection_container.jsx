@@ -3,7 +3,8 @@ import values from "lodash/values";
 import CollectionList from "./collection_list";
 import {
   deleteCollection,
-  updateCollection
+  updateCollection,
+  fetchCollections
 } from "../../actions/collection_actions";
 
 const mapStateToProps = ({ session, collections }) => ({

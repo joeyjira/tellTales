@@ -7,6 +7,10 @@ import {
   createSource
 } from "../../actions/collection_actions";
 
+import {
+  fetchArticles
+} from "../../actions/article_actions";
+
 const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
   currentUser: session.currentUser,
   article: articles,

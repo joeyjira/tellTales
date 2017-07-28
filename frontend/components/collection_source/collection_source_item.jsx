@@ -24,6 +24,10 @@ class CollectionSourceItem extends React.Component {
     }
 
     let name = matchSource[0] ? matchSource[0].name : "";
+
+    if (imageUrl !== "") {
+      
+    }
     return (
       <div className="collection-source-options">
         <button className="fa-delete-source" onClick={this.handleDelete}>

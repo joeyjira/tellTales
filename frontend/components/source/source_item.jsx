@@ -10,22 +10,26 @@ class SourceItem extends React.Component {
     const { name, id, url } = this.props;
     let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
     if (imageUrl === "http://espn.go.com") {
-      imageUrl = "http://espn.com"
+      imageUrl = "http://espn.com";
     }
-
-    return (
-      <Link to={`/feed/source/${id}`}>
-        <div className="source-item">
-          <img
-            src={`http://logo.clearbit.com/${imageUrl}?size=202`}
-            className="logo-image"
-          />
-          <div className="source-name">
-            {name}
+    
+    if (imageUrl !== "") {
+      return (
+        <Link to={`/feed/source/${id}`}>
+          <div className="source-item">
+            <img
+              src={`http://logo.clearbit.com/${imageUrl}?size=202`}
+              className="logo-image"
+            />
+            <div className="source-name">
+              {name}
+            </div>
           </div>
-        </div>
-      </Link>
-    );
+        </Link>
+      );
+    } else {
+      <div />;
+    }
   }
 }
 

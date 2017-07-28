@@ -28,6 +28,7 @@ class SourceResult extends React.Component {
       source.name !== "Bloomberg" &&
       source.name !== "CNN" &&
       source.name !== "Engadget" &&
+      source.name !== "ESPN Cric Info" &&
       source.name !== "Financial Times" &&
       source.name !== "FourFourTwo" &&
       source.name !== "Hacker News" && 

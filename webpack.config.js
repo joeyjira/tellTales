@@ -32,6 +32,7 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"]
   },
   devtool: 'source-maps',
+   plugins: plugins,
   module: {
     loaders: [
     {

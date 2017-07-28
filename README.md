@@ -22,13 +22,6 @@ The search is handled in the frontend using javascript that matches to the categ
 
 <img src="http://res.cloudinary.com/llventioll/image/upload/v1501275695/live_search_s50f6z.gif" width="800px">
 
-### Articles
-
-Articles can be opened up in a modal window while preserving the original article's source.
-
-<img src="http://res.cloudinary.com/llventioll/image/upload/v1501275117/opening_articles_aatmms.gif" width="800px">
-
-
 ### Collections
 Collections can be created, deleted, and edited to organize the feed sources into the user's preferred categories.
 
@@ -65,6 +58,13 @@ The icons next to each source took a bit of work as demonstrated by the code bel
       </div>
     );
 ```
+
+### Articles
+
+Articles can be opened up in a modal window while preserving the original article's source.
+
+<img src="http://res.cloudinary.com/llventioll/image/upload/v1501275117/opening_articles_aatmms.gif" width="800px">
+
 
 ## Development Design
 * [Wireframes][wireframes]

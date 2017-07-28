@@ -2,7 +2,6 @@
 
 Link - [tell-tales.herokuapp.com](http://tell-tales.herokuapp.com/)
 
-Reedy is a minimalistic RSS feed reader inspired by [Feedly](https://feedly.com/).
 tellTales is an RSS feed reader inspired by [Feedly](https://feedly.com/).
 
 This web app uses Ruby on Rails, React, Redux, and Javascript.

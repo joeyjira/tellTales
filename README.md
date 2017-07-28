@@ -16,7 +16,7 @@ The app uses a minimalistic design approach consisting of a side navigation bar 
 
 ### Hello World
 
-The Hello World page has a search bar that filters feeds in real time.
+The Hello World page has a search bar that filters sources in real time.
 The search is handled in the frontend using javascript that matches to the category and name of the source.
 
 <img src="http://res.cloudinary.com/llventioll/image/upload/v1501275695/live_search_s50f6z.gif" width="800px">

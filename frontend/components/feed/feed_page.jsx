@@ -61,7 +61,7 @@ class FeedPage extends React.Component {
             <CollectionContainer />
             <div className="add-content">
               <a
-                href="https://github.com/joeyjira"
+                href="https://github.com/joeyjira/tellTales"
                 className="add-content-link"
                 target="_blank"
               >

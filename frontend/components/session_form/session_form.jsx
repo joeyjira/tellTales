@@ -5,6 +5,7 @@ import Signup from "./signup";
 import Login from "./login";
 import { fadeIn } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
+import GreetingContainer from "../greeting/greeting_container";
 
 const styles = StyleSheet.create({
   fadeIn: {
@@ -28,6 +29,7 @@ class SessionForm extends React.Component {
     const { login, signup, signupErrors, loginErrors } = this.props;
     return (
       <div className={css(styles.fadeIn)}>
+        <GreetingContainer />
         <div id="background" className="background">
           <div className="main-portal">
             <h1 className="title">tellTales</h1>

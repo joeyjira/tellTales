@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
         <div id="background" className="background">
           <div className="main-portal">
             <h1 className="title">tellTales</h1>
-            <h2 className="tagline">Hello World!</h2>
+            <h2 className="tagline">The Place to Get Your News</h2>
             <div className="session-form-container">
               <Signup signupErrors={signupErrors} signup={signup} />
               <Login loginErrors={loginErrors} login={login} />

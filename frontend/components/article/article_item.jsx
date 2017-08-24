@@ -8,18 +8,18 @@ class ArticleItem extends React.Component {
 
     this.state = {
       modalIsOpen: false
-    }
+    };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
-    this.setState({modalIsOpen: true})
+    this.setState({modalIsOpen: true});
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false})
+    this.setState({modalIsOpen: false});
   }
 
   handleModal() {
@@ -42,7 +42,7 @@ class ArticleItem extends React.Component {
             <h2>
               {title}
             </h2>
-             <p> 
+             <p>
               {description}
             </p>
           </div>
@@ -50,9 +50,9 @@ class ArticleItem extends React.Component {
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             contentLabel="article-view"
-            className="article-modal">  
+            className="article-modal">
             <iframe className="iframe" src={url} sandbox="allow-same-origin allow-scripts"/>
-          </Modal>   
+          </Modal>
         </div>
     );
   }

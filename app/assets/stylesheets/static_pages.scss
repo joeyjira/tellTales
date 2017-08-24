@@ -394,3 +394,11 @@ body,
 .author-string {
   margin-bottom: 20px;
 }
+
+.login-signup-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+}

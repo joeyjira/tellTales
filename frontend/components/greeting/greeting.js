@@ -55,7 +55,7 @@ class Greeting extends React.Component {
         <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="article-view" className="session-modal">
           <div className="main-portal">
             <h1 className="title">tellTales</h1>
-            <h2 className="tagline">Tagline placeholder</h2>
+            <h2 className="tagline">Delivering the World's Buzz</h2>
             <div className="session-form-container">
               <Signup signupErrors={signupErrors} signup={signup}/>
               <Login loginErrors={loginErrors} login={login}/>

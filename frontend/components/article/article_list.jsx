@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import {Route, Redirect, Switch, Link, HashRouter} from "react-router-dom";
 
 import ArticleItem from "./article_item";
 
@@ -26,50 +26,39 @@ class ArticleList extends React.Component {
   }
 
   update(field) {
-    return e =>
-      this.setState({
-        [field]: e.currentTarget.value
-      });
+    return e => this.setState({[field]: e.currentTarget.value});
   }
 
   handleClick(collectionId) {
-    return e =>
-      this.props.createSource(collectionId, this.props.match.params.sourceId);
+    return e => this.props.createSource(collectionId, this.props.match.params.sourceId);
   }
 
   render() {
-    const { article, feedSources, collections } = this.props;
-    const { articles, source } = article;
-    const { sources } = feedSources;
+    const {article, feedSources, collections} = this.props;
+    const {articles, source} = article;
+    const {sources} = feedSources;
     // const todayDate = articles[0].publishedAt
 
-
     const matchSource = sources.filter(source => source.id === article.source);
-    let url = matchSource[0] ? matchSource[0].url : "";
-    let imageUrl = url ? url.replace(/(\w)\/\w.*/, "$1") : "";
+    let url = matchSource[0]
+      ? matchSource[0].url
+      : "";
+    let imageUrl = url
+      ? url.replace(/(\w)\/\w.*/, "$1")
+      : "";
     if (imageUrl === "http://espn.go.com") {
       imageUrl = "http://espn.com";
     }
 
-    let name = matchSource[0] ? matchSource[0].name : "";
+    let name = matchSource[0]
+      ? matchSource[0].name
+      : "";
 
-    const articleItems = articles.map((article, idx) =>
-      <ArticleItem
-        key={idx}
-        title={article.title}
-        description={article.description}
-        image={article.urlToImage}
-        url={article.url}
-        published={article.publishedAt}
-        author={article.author}
-      />
-    );
+    const articleItems = articles.map((article, idx) => <ArticleItem key={idx} title={article.title} description={article.description} image={article.urlToImage} url={article.url} published={article.publishedAt} author={article.author}/>);
 
-    const collectionButtons = collections.map(collection =>
-      <button key={collection.id} onClick={this.handleClick(collection.id)}>
-        {collection.title}
-      </button>
-    );
+    const collectionButtons = collections.reverse().map(collection => <button key={collection.id} onClick={this.handleClick(collection.id)}>
+      {collection.title}
+    </button>);
 
     return (
       <div className="article-item-list">
@@ -78,17 +67,14 @@ class ArticleList extends React.Component {
             <Link to="/feed/result" className="back-button-link">
               <div className="animated infinite pulse">
                 <div className="hello-logo">
-                  <i className="fa fa-angle-left fa-4x" aria-hidden="true" />
+                  <i className="fa fa-angle-left fa-4x" aria-hidden="true"/>
                 </div>
               </div>
             </Link>
           </div>
           <div className="article-source-name">
             <div className="article-logo">
-              <img
-                src={`http://logo.clearbit.com/${imageUrl}?size=202`}
-                className="article-logo-image"
-              />
+              <img src={`http://logo.clearbit.com/${imageUrl}?size=202`} className="article-logo-image"/>
             </div>
             <p>
               {" "}{name}{" "}

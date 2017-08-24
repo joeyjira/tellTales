@@ -52,7 +52,7 @@ class Greeting extends React.Component {
               <button className="logout-button" onClick={this.openModal}>Sign Up</button>
             </div>}
         </div>
-        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="article-view" className="article-modal">
+        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="article-view" className="session-modal">
           <div className="main-portal">
             <h1 className="title">tellTales</h1>
             <h2 className="tagline">Tagline placeholder</h2>

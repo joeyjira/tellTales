@@ -82,6 +82,7 @@ body,
 
 .header-link {
   text-decoration: none;
+  margin-left: 10px;
 }
 
 .greeting-container {
@@ -401,4 +402,13 @@ body,
   justify-content: space-around;
   align-items: center;
   width: 200px;
+}
+
+.welcome-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
 }

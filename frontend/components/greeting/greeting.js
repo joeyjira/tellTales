@@ -37,6 +37,7 @@ class Greeting extends React.Component {
       logout,
       currentUser
     } = this.props;
+
     return (
       <div className="header-container">
         <Link to="/feed/result" className="header-link">
@@ -44,9 +45,12 @@ class Greeting extends React.Component {
         </Link>
         <div className="greeting-container">
           {currentUser
-            ? <button className="logout-button" onClick={logout}>
-                Log Out
-              </button>
+            ? <div className="welcome-message">
+                Welcome {currentUser.username}!
+                <button className="logout-button" onClick={logout}>
+                  Log Out
+                </button>
+              </div>
             : <div className="login-signup-container">
               <button className="logout-button" onClick={this.openModal}>Login</button>
               <button className="logout-button" onClick={this.openModal}>Sign Up</button>

@@ -1,8 +1,13 @@
-import {connect} from "react-redux";
-import {login, logout, signup, receiveCurrentUser} from "../../actions/session_actions";
+import { connect } from "react-redux";
+import {
+  login,
+  logout,
+  signup,
+  receiveCurrentUser
+} from "../../actions/session_actions";
 import Greeting from "./greeting";
 
-const mapStateToProps = ({session}) => ({
+const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,
   loggedIn: Boolean(session.currentUser),
   loginErrors: session.loginErrors,

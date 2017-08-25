@@ -28,11 +28,11 @@ export const postSource = (collectionId, source) =>
   $.ajax({
     method: "POST",
     url: `/api/collections/${collectionId}/sources`,
-    data: { source: {source_id: source} }
+    data: { source: { source_id: source } }
   });
 
-export const deleteSource = (sourceId) =>
+export const deleteSource = sourceId =>
   $.ajax({
     method: "DELETE",
-    url: `/api/sources/${sourceId}`,
+    url: `/api/sources/${sourceId}`
   });

@@ -48,16 +48,18 @@ export const deleteCollection = collectionId => dispatch => {
 };
 
 export const updateCollection = collection => dispatch => {
-  return APIUtil.patchCollection(collection)
-    .then(collection => dispatch(receiveCollection(collection)))
-}
+  return APIUtil.patchCollection(collection).then(collection =>
+    dispatch(receiveCollection(collection))
+  );
+};
 
 export const createSource = (collectionId, source) => dispatch =>
   APIUtil.postSource(collectionId, source).then(collection =>
     dispatch(receiveCollection(collection))
   );
 
-export const deleteSource = (sourceId) => dispatch => {
-  return APIUtil.deleteSource(sourceId)
-    .then((collection) => dispatch(receiveCollection(collection)));
+export const deleteSource = sourceId => dispatch => {
+  return APIUtil.deleteSource(sourceId).then(collection =>
+    dispatch(receiveCollection(collection))
+  );
 };

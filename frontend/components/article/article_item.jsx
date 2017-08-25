@@ -15,11 +15,11 @@ class ArticleItem extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   handleModal() {
@@ -33,27 +33,34 @@ class ArticleItem extends React.Component {
     const time = dateTime.toLocaleTimeString();
 
     return (
-        <div className="article-item" onClick={this.openModal}>
-          <div className="article-image-frame">
-            <img src={image} className="article-image" />
-          </div>
-          <div className="article-info">
-            <p className="date-string">{date} {time}</p>
-            <h2>
-              {title}
-            </h2>
-             <p>
-              {description}
-            </p>
-          </div>
-          <Modal
-            isOpen={this.state.modalIsOpen}
-            onRequestClose={this.closeModal}
-            contentLabel="article-view"
-            className="article-modal">
-            <iframe className="iframe" src={url} sandbox="allow-same-origin allow-scripts"/>
-          </Modal>
+      <div className="article-item" onClick={this.openModal}>
+        <div className="article-image-frame">
+          <img src={image} className="article-image" />
         </div>
+        <div className="article-info">
+          <p className="date-string">
+            {date} {time}
+          </p>
+          <h2>
+            {title}
+          </h2>
+          <p>
+            {description}
+          </p>
+        </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="article-view"
+          className="article-modal"
+        >
+          <iframe
+            className="iframe"
+            src={url}
+            sandbox="allow-same-origin allow-scripts"
+          />
+        </Modal>
+      </div>
     );
   }
 }

@@ -6,7 +6,6 @@ const mapStateToProps = ({ session, feedSource }) => ({
   feedSources: feedSource
 });
 
-const mapDispatchToProps = dispatch => ({
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SourceResult);

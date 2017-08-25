@@ -7,9 +7,7 @@ import {
   createSource
 } from "../../actions/collection_actions";
 
-import {
-  fetchArticles
-} from "../../actions/article_actions";
+import { fetchArticles } from "../../actions/article_actions";
 
 const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
   currentUser: session.currentUser,
@@ -21,7 +19,8 @@ const mapStateToProps = ({ session, articles, feedSource, collections }) => ({
 const mapDispatchToProps = dispatch => ({
   fetchCollections: () => dispatch(fetchCollections()),
   fetchArticles: source => dispatch(fetchArticles(source)),
-  createSource: (collectionId, source) => dispatch(createSource(collectionId, source))
+  createSource: (collectionId, source) =>
+    dispatch(createSource(collectionId, source))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

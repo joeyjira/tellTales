@@ -8,6 +8,4 @@ export const receiveArticles = articles => ({
 });
 
 export const fetchArticles = source => dispatch =>
-  APIUtil.getArticles(source).then(source =>
-    dispatch(receiveArticles(source))
-  );
+  APIUtil.getArticles(source).then(source => dispatch(receiveArticles(source)));

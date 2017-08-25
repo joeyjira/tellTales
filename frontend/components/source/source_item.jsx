@@ -12,7 +12,7 @@ class SourceItem extends React.Component {
     if (imageUrl === "http://espn.go.com") {
       imageUrl = "http://espn.com";
     }
-    
+
     if (imageUrl !== "") {
       return (
         <Link to={`/feed/source/${id}`}>

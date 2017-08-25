@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import Signup from "../session_form/signup";
 import Login from "../session_form/login";
@@ -17,11 +17,11 @@ class Greeting extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   handleModal() {
@@ -52,17 +52,26 @@ class Greeting extends React.Component {
                 </button>
               </div>
             : <div className="login-signup-container">
-              <button className="logout-button" onClick={this.openModal}>Login</button>
-              <button className="logout-button" onClick={this.openModal}>Sign Up</button>
-            </div>}
+                <button className="logout-button" onClick={this.openModal}>
+                  Login
+                </button>
+                <button className="logout-button" onClick={this.openModal}>
+                  Sign Up
+                </button>
+              </div>}
         </div>
-        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="article-view" className="session-modal">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="article-view"
+          className="session-modal"
+        >
           <div className="main-portal">
             <h1 className="title">tellTales</h1>
             <h2 className="tagline">Delivering the World's Buzz</h2>
             <div className="session-form-container">
-              <Signup signupErrors={signupErrors} signup={signup}/>
-              <Login loginErrors={loginErrors} login={login}/>
+              <Signup signupErrors={signupErrors} signup={signup} />
+              <Login loginErrors={loginErrors} login={login} />
             </div>
           </div>
         </Modal>

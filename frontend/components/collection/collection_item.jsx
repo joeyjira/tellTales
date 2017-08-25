@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Redirect, Switch, Link, HashRouter} from "react-router-dom";
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import CollectionSourceContainer from "../collection_source/collection_source_container";
 
 class CollectionItem extends React.Component {
@@ -16,7 +16,7 @@ class CollectionItem extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value});
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   showEdit() {
@@ -33,7 +33,7 @@ class CollectionItem extends React.Component {
       },
       id: collectionId
     });
-    this.setState({showEdit: false});
+    this.setState({ showEdit: false });
   }
 
   handleDelete() {
@@ -41,7 +41,7 @@ class CollectionItem extends React.Component {
   }
 
   render() {
-    const {title} = this.props;
+    const { title } = this.props;
 
     if (title) {
       if (this.state.showEdit) {
@@ -50,12 +50,20 @@ class CollectionItem extends React.Component {
             <div className="collection-name">
               <div className="name-edit" onDoubleClick={this.showEdit}>
                 <form onSubmit={this.handleEdit}>
-                  <input type="text" value={this.state.title} onChange={this.update("title")} autoFocus="autofocus"/>
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update("title")}
+                    autoFocus="autofocus"
+                  />
                 </form>
               </div>
             </div>
             <div className="collection-source">
-              <CollectionSourceContainer collectionId={this.props.id} sources={this.props.sources}/>
+              <CollectionSourceContainer
+                collectionId={this.props.id}
+                sources={this.props.sources}
+              />
             </div>
           </div>
         );
@@ -69,17 +77,20 @@ class CollectionItem extends React.Component {
                 {title}
               </div>
               <button className="fa-delete" onClick={this.handleDelete}>
-                <i className="fa fa-trash" aria-hidden="true"/>
+                <i className="fa fa-trash" aria-hidden="true" />
               </button>
             </div>
             <div className="collection-source">
-              <CollectionSourceContainer collectionId={this.props.id} sources={this.props.sources}/>
+              <CollectionSourceContainer
+                collectionId={this.props.id}
+                sources={this.props.sources}
+              />
             </div>
           </div>
         );
       }
     } else {
-      return <div/>;
+      return <div />;
     }
   }
 }

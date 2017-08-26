@@ -32,10 +32,10 @@
   font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
   margin-bottom: 5%;
   h1 {
-    font-size: 5em;
+    font-size: 80px;
   }
   h3 {
-    font-size: 2em;
+    font-size: 32px;
     color: rgb(110, 152, 204);
   }
 }
@@ -114,10 +114,6 @@
 .login-column {
   display: flex;
   justify-content: space-between;
-}
-
-.signup-column {
-
 }
 
 h2 {
@@ -333,9 +329,6 @@ label {
   color: #fff;
   border: 1px solid #3a66ad;
   border-radius: 3px;
-}
-
-.signup-form {
 }
 
 .signup-button {

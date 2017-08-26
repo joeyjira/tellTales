@@ -25,15 +25,15 @@ class SessionForm extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props
-      .fetchFeedSources()
-      .then(sources =>
-        this.props.fetchArticles(
-          sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
-        )
-      );
-  }
+  // componentWillMount() {
+  //   this.props
+  //     .fetchFeedSources()
+  //     .then(sources =>
+  //       this.props.fetchArticles(
+  //         sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
+  //       )
+  //     );
+  // }
 
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
@@ -45,18 +45,15 @@ class SessionForm extends React.Component {
       <div className={css(styles.fadeIn)}>
         <GreetingContainer />
         <div id="background" className="background">
-          {randomArticle ? <div className="article-of-the-day">
-            <div className="headline">Today's Headline</div>
-            <div className="article-of-the-day-image">
-            <img src={randomArticle.urlToImage} className="article-image" />
-              </div>
-            <div className="article-of-the-day-title">
-            {randomArticle.title}
+          <div className="home-menu">
+            <div className="welcome-message">
+              <h1>Welcome to tellTales</h1>
             </div>
-            <div className="article-of-the-day-description">
-              {randomArticle.description}
-              </div>
-            </div> : ""}
+            <img
+              className="frontpage-image"
+              src="http://res.cloudinary.com/llventioll/image/upload/v1501274278/Screen_Shot_2017-07-28_at_1.37.16_PM_coxrfz.png"
+            />
+          </div>
         </div>
       </div>
     );

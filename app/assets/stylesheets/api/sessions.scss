@@ -3,11 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #background {
-  background-image: url("http://res.cloudinary.com/llventioll/image/upload/v1503618941/nick-karvounis-261183_xmon5g.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(30, 38, 47);
   background-size: cover;
   width: 100%;
   height: 100%;
   position: fixed;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.welcome-message{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
+  h1 {
+    font-size: 5em;
+  }
 }
 
 .main-portal {
@@ -338,5 +362,9 @@ label {
   color: rgb(110, 152, 204);
   align-content: center;
   background-color: white;
-  opacity: .8;
+}
+
+.frontpage-image {
+  width: 1000px;
+  height: auto;
 }

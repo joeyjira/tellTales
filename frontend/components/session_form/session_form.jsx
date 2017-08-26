@@ -48,10 +48,11 @@ class SessionForm extends React.Component {
           <div className="home-menu">
             <div className="welcome-message-session">
               <h1>Welcome to tellTales</h1>
+              <h3>Follow the News from Your Favorite Sources</h3>
             </div>
             <img
               className="frontpage-image"
-              src="http://res.cloudinary.com/llventioll/image/upload/v1501275695/live_search_s50f6z.gif"
+              src="http://res.cloudinary.com/llventioll/image/upload/v1503709830/Screen_Shot_2017-08-25_at_6.10.03_PM_eko53c.png"
             />
           </div>
         </div>

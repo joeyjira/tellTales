@@ -46,12 +46,12 @@ class SessionForm extends React.Component {
         <GreetingContainer />
         <div id="background" className="background">
           <div className="home-menu">
-            <div className="welcome-message">
+            <div className="welcome-message-session">
               <h1>Welcome to tellTales</h1>
             </div>
             <img
               className="frontpage-image"
-              src="http://res.cloudinary.com/llventioll/image/upload/v1501274278/Screen_Shot_2017-07-28_at_1.37.16_PM_coxrfz.png"
+              src="http://res.cloudinary.com/llventioll/image/upload/v1501275695/live_search_s50f6z.gif"
             />
           </div>
         </div>

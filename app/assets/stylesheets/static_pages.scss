@@ -412,3 +412,17 @@ body,
   width: 300px;
   font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
 }
+
+.loading-icon {
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}

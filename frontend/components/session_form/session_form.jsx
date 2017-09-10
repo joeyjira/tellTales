@@ -7,12 +7,12 @@ import { fadeIn } from "react-animations";
 import { StyleSheet, css } from "aphrodite";
 import GreetingContainer from "../greeting/greeting_container";
 
-const styles = StyleSheet.create({
-  fadeIn: {
-    animationName: fadeIn,
-    animationDuration: "8s"
-  }
-});
+// const styles = StyleSheet.create({
+//   fadeIn: {
+//     animationName: fadeIn,
+//     animationDuration: "8s"
+//   }
+// });
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -25,15 +25,15 @@ class SessionForm extends React.Component {
     }
   }
 
-  // componentWillMount() {
-  //   this.props
-  //     .fetchFeedSources()
-  //     .then(sources =>
-  //       this.props.fetchArticles(
-  //         sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
-  //       )
-  //     );
-  // }
+  componentWillMount() {
+    this.props
+      .fetchFeedSources()
+      .then(sources =>
+        this.props.fetchArticles(
+          sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
+        )
+      );
+  }
 
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     console.log(randomArticle);
 
     return (
-      <div className={css(styles.fadeIn)}>
+      <div>
         <GreetingContainer />
         <div id="background" className="background">
           <div className="home-menu">
@@ -50,12 +50,20 @@ class SessionForm extends React.Component {
               <h1>Welcome to tellTales</h1>
               <h3>Follow the News from Your Favorite Sources</h3>
             </div>
-            <img
-              className="frontpage-image"
-              src="http://res.cloudinary.com/llventioll/image/upload/v1503709830/Screen_Shot_2017-08-25_at_6.10.03_PM_eko53c.png"
-            />
+            <div />
           </div>
         </div>
+        {randomArticle ? (
+          <div>Article</div>
+        ) : (
+          <div>
+            <div className="animated infinite pulse">
+              <div className="center-tag-logo">
+                <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

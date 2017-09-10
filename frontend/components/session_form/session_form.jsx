@@ -17,6 +17,13 @@ import GreetingContainer from "../greeting/greeting_container";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    this.randomArticle = this.props.fetchFeedSources().then(sources =>
+      setInterval(() => {
+        this.props.fetchArticles(
+          sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
+        );
+      }, 4000)
+    );
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,11 +42,13 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    for (var i = 1; i < 99999; i++) clearInterval(i);
+  }
+
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
-
     const randomArticle = article.articles[Math.floor(Math.random() * 9 + 0)];
-    console.log(this.props);
 
     return (
       <div className="home-page">

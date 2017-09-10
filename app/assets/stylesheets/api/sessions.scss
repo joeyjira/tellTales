@@ -11,8 +11,12 @@
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
-  position: fixed;
   overflow: scroll;
+}
+
+.home-page {
+  height: 100%;
+  width: 100%;
 }
 
 .home-menu {
@@ -28,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
   margin-bottom: 30px;
   h1 {
@@ -38,6 +42,27 @@
     font-size: 32px;
     color: rgb(110, 152, 204);
   }
+}
+
+.frontpage-article {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 240, 240);
+  font-family: 'Open Sans',sans-serif,'Roboto', sans-serif;
+  font-size: 30px;
+  max-width: 800px;
+  h3 {
+    color: rgb(120, 120, 120);
+    overflow-wrap: break-word;
+    margin: 15px;
+  }
+  img {
+    width: 800px;
+  }
+}
+
+.frontpage-article:hover {
+  cursor: pointer;
 }
 
 .main-portal {

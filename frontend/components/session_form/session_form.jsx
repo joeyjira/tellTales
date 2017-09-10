@@ -25,24 +25,24 @@ class SessionForm extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.props
-      .fetchFeedSources()
-      .then(sources =>
+  componentDidMount() {
+    this.props.fetchFeedSources().then(sources =>
+      setInterval(() => {
         this.props.fetchArticles(
           sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
-        )
-      );
+        );
+      }, 4000)
+    );
   }
 
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
 
     const randomArticle = article.articles[Math.floor(Math.random() * 9 + 0)];
-    console.log(randomArticle);
+    console.log(this.props);
 
     return (
-      <div>
+      <div className="home-page">
         <GreetingContainer />
         <div id="background" className="background">
           <div className="home-menu">
@@ -52,18 +52,21 @@ class SessionForm extends React.Component {
             </div>
             <div />
           </div>
-        </div>
-        {randomArticle ? (
-          <div>Article</div>
-        ) : (
-          <div>
-            <div className="animated infinite pulse">
-              <div className="center-tag-logo">
-                <img src="http://res.cloudinary.com/llventioll/image/upload/v1500651465/Screen_Shot_2017-07-21_at_8.32.00_AM_ouxoye.png" />
+          {randomArticle ? (
+            <div className="frontpage-article">
+              <img src={randomArticle.urlToImage} />
+              <h3>{randomArticle.title}</h3>
+            </div>
+          ) : (
+            <div>
+              <div className="animated infinite pulse">
+                <div className="center-tag-logo">
+                  <img src="http://res.cloudinary.com/llventioll/image/upload/v1505077296/ajax-loader_lr3we7.gif" />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     );
   }

@@ -49,6 +49,7 @@ class SessionForm extends React.Component {
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
     const randomArticle = article.articles[Math.floor(Math.random() * 9 + 0)];
+    console.log(randomArticle)
 
     return (
       <div className="home-page">

@@ -56,7 +56,7 @@ class SourceResult extends React.Component {
         source.name.toLowerCase().includes(this.state.search.toLowerCase()) ||
         this.state.search.toLowerCase().includes(source.name.toLowerCase())
     );
-    const sourceItems = filteredSources.map(feed =>
+    const sourceItems = filteredSources.map(feed => (
       <SourceItem
         key={feed.id}
         name={feed.name}
@@ -64,7 +64,7 @@ class SourceResult extends React.Component {
         id={feed.id}
         url={feed.url}
       />
-    );
+    ));
 
     return (
       <div className="search-and-return">
@@ -94,9 +94,13 @@ class SourceResult extends React.Component {
             <option value="Technology" />
           </datalist>
         </div>
-        <div className="source-item-list">
-          {sourceItems}
-        </div>
+        {sourceItems.length === 0 ? (
+          <div>
+            <p>Sorry, no matching results were found.</p>
+          </div>
+        ) : (
+          <div className="source-item-list">{sourceItems}</div>
+        )}
       </div>
     );
   }

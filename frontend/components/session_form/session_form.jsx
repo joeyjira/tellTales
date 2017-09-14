@@ -1,18 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router";
+import Modal from "react-modal";
 
 import Signup from "./signup";
 import Login from "./login";
 import { fadeIn } from "react-animations";
-import { StyleSheet, css } from "aphrodite";
 import GreetingContainer from "../greeting/greeting_container";
-
-// const styles = StyleSheet.create({
-//   fadeIn: {
-//     animationName: fadeIn,
-//     animationDuration: "8s"
-//   }
-// });
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -24,6 +17,12 @@ class SessionForm extends React.Component {
         );
       }, 4000)
     );
+    this.state = {
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,10 +45,21 @@ class SessionForm extends React.Component {
     for (var i = 1; i < 99999; i++) clearInterval(i);
   }
 
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
+
+  handleModal() {
+    this.openModal();
+  }
+
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
     const randomArticle = article.articles[Math.floor(Math.random() * 9 + 0)];
-    console.log(randomArticle)
 
     return (
       <div className="home-page">
@@ -63,8 +73,10 @@ class SessionForm extends React.Component {
             <div />
           </div>
           {randomArticle ? (
-            <div className="frontpage-article">
+            <div className="frontpage-article" onClick={this.openModal}>
+              <div className="session-image-container">
               <img src={randomArticle.urlToImage} />
+              </div>
               <h3>{randomArticle.title}</h3>
             </div>
           ) : (
@@ -77,6 +89,21 @@ class SessionForm extends React.Component {
             </div>
           )}
         </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="article-view"
+          className="session-modal"
+        >
+          <div className="main-portal">
+            <h1 className="title">tellTales</h1>
+            <h2 className="tagline">Delivering the World's Buzz</h2>
+            <div className="session-form-container">
+              <Signup signupErrors={signupErrors} signup={signup} />
+              <Login loginErrors={loginErrors} login={login} />
+            </div>
+          </div>
+        </Modal>
       </div>
     );
   }

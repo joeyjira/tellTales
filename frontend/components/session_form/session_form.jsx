@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
         this.props.fetchArticles(
           sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
         );
-      }, 4000)
+      }, 15000)
     );
     this.state = {
       modalIsOpen: false

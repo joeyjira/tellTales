@@ -6,23 +6,22 @@ import Signup from "./signup";
 import Login from "./login";
 import { fadeIn } from "react-animations";
 import GreetingContainer from "../greeting/greeting_container";
+import SlideShow from './slideShow';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.randomArticle = this.props.fetchFeedSources().then(sources =>
-      setInterval(() => {
-        this.props.fetchArticles(
-          sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
-        );
-      }, 15000)
-    );
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      slideShow: document.querySelectorAll("div.slide-show")
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.plusDivs = this.plusDivs.bind(this);
+    this.minusDivs = this.minusDivs.bind(this);
+    this.showDivs = this.showDivs.bind(this);
+    this.slideIndex = 1; 
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,16 +32,14 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchFeedSources().then(sources =>
-      setInterval(() => {
         this.props.fetchArticles(
           sources.feedSources.sources[Math.floor(Math.random() * 69 + 0)].id
-        );
-      }, 15000)
-    );
+        )
+      );
   }
 
   componentWillUnmount() {
-    for (var i = 1; i < 99999; i++) clearInterval(i);
+    for (let i = 1; i < 99999; i++) clearInterval(i);
   }
 
   openModal() {
@@ -57,9 +54,37 @@ class SessionForm extends React.Component {
     this.openModal();
   }
 
+  plusDivs() {
+    this.showDivs(this.slideIndex += 1);
+  }
+
+  minusDivs() {
+    this.showDivs(this.slideIndex -= 1);
+  }
+
+  showDivs(n) {
+    let i;
+    if (n > this.slideShow.length) { this.slideIndex = 1 }
+    if (n < 1) { this.slideIndex = x.length }
+    for (i = 0; i < this.slideShow.length; i++) {
+      this.slideShow[i].style.display = "none";
+    }
+    this.slideShow[this.slideIndex - 1].style.display = "block";
+  }
+
   render() {
     const { login, signup, signupErrors, loginErrors, article } = this.props;
-    const randomArticle = article.articles[Math.floor(Math.random() * 9 + 0)];
+    const randomArticles = article.articles;
+    const slideShow = randomArticles.map(article =>
+      <SlideShow
+        key={article.title}
+        title={article.title}
+        imageSrc={article.urlToImage}
+      />
+    );
+
+    console.log(this.slideShow)
+    // randomArticles.length > 0 ? this.showDivs(this.slideIndex) : null;
 
     return (
       <div className="home-page">
@@ -72,12 +97,11 @@ class SessionForm extends React.Component {
             </div>
             <div />
           </div>
-          {randomArticle ? (
-            <div className="frontpage-article" onClick={this.openModal}>
+          {randomArticles.length > 0 ? (
+            <div className="frontpage-article" onClick={this.plusDivs}>
               <div className="session-image-container">
-              <img src={randomArticle.urlToImage} />
+                { slideShow }
               </div>
-              <h3>{randomArticle.title}</h3>
             </div>
           ) : (
             <div>

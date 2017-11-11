@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,6 +53,12 @@ class SessionForm extends React.Component {
 
   handleModal() {
     this.openModal();
+  }
+
+  nextSlide() {
+    this.setState({
+      slideIndex: 1
+    })
   }
 
   render() {
@@ -93,7 +100,7 @@ class SessionForm extends React.Component {
           {randomArticles.length > 0 ? (
             <div className="frontpage-article" onClick={this.plusDivs}>
               <div className="session-image-container">
-                <div className="w3-button w3-black w3-display-left">&#10094;</div>
+                <div className="w3-button w3-black w3-display-left" onClick={this.nextSlide}>&#10094;</div>
                 <div className="w3-button w3-black w3-display-right">&#10095;</div>
                 { slideShow }
               </div>

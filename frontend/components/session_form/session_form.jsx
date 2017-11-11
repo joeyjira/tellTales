@@ -100,8 +100,10 @@ class SessionForm extends React.Component {
           {randomArticles.length > 0 ? (
             <div className="frontpage-article" onClick={this.plusDivs}>
               <div className="session-image-container">
-                <div className="w3-button w3-black w3-display-left" onClick={this.nextSlide}>&#10094;</div>
-                <div className="w3-button w3-black w3-display-right">&#10095;</div>
+                <div className="slide-controller">
+                  <div className="slide-arrow" onClick={this.nextSlide}>&#10094;</div>
+                  <div className="slide-arrow">&#10095;</div>
+                </div>
                 { slideShow }
               </div>
             </div>

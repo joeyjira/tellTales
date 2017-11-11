@@ -60,12 +60,26 @@
 }
 
 .session-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 800px;
   height: 400px;
   overflow: hidden;
   img {
     width: 810px;
   }
+}
+
+.slide-controller {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slide-arrow {
+  position: absolute;
 }
 
 .frontpage-article:hover {

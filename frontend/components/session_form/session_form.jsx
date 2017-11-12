@@ -101,8 +101,8 @@ class SessionForm extends React.Component {
             <div className="frontpage-article" onClick={this.plusDivs}>
               <div className="session-image-container">
                 <div className="slide-controller">
-                  <div className="slide-arrow" onClick={this.nextSlide}>&#10094;</div>
-                  <div className="slide-arrow">&#10095;</div>
+                  <div className="slide-arrow" >&#10094;</div>
+                  <div className="slide-arrow" onClick={this.nextSlide} >&#10095;</div>
                 </div>
                 { slideShow }
               </div>

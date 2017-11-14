@@ -16,7 +16,8 @@ class SessionForm extends React.Component {
       style: {
         display: "none"
       },
-      slideIndex: 0
+      slideIndex: 0,
+      slideNumber: this.props.article.articles || 0
     };
 
     this.openModal = this.openModal.bind(this);
@@ -57,7 +58,7 @@ class SessionForm extends React.Component {
 
   nextSlide() {
     this.setState({
-      slideIndex: 1
+      slideIndex: this.state.slideIndex + 1
     })
   }
 

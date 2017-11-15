@@ -23,6 +23,7 @@ class SessionForm extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -59,6 +60,12 @@ class SessionForm extends React.Component {
   nextSlide() {
     this.setState({
       slideIndex: this.state.slideIndex + 1
+    })
+  }
+
+  previousSlide() {
+    this.setState({
+      slideIndex: this.state.slideIndex - 1
     })
   }
 
@@ -102,7 +109,7 @@ class SessionForm extends React.Component {
             <div className="frontpage-article" onClick={this.plusDivs}>
               <div className="session-image-container">
                 <div className="slide-controller">
-                  <div className="slide-arrow" >&#10094;</div>
+                  <div className="slide-arrow" onClick={this.previousSlide} >&#10094;</div>
                   <div className="slide-arrow" onClick={this.nextSlide} >&#10095;</div>
                 </div>
                 { slideShow }

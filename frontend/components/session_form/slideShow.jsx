@@ -6,6 +6,7 @@ class SlideShow extends React.Component {
         console.log(imageSrc)
         return(
             <div className="slide-show" style={display}>
+                <h1>{title}</h1>
                 <img src={imageSrc}/>
             </div>
         );

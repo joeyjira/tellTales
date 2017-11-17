@@ -431,9 +431,13 @@ body,
 }
 
 .slide-show {
+  display: flex;
+  align-items: center;
   h1 {
     position: absolute;
     background: white;
     width: 500px;
+    opacity: 0.8;
+    color: grey;
   }
 }

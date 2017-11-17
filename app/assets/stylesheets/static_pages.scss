@@ -431,5 +431,9 @@ body,
 }
 
 .slide-show {
-  
+  h1 {
+    position: absolute;
+    background: white;
+    width: 500px;
+  }
 }
